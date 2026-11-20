@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hondu Truck · Arma tu pedido de piezas para camión</title>
+<meta name="description" content="Arma tu pedido de accesorios y repuestos para camión y envíalo por WhatsApp. Envíos a todo Honduras en 24–48 h y garantía de 6 meses.">
+<meta name="theme-color" content="#151A21">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800;900&family=Red+Hat+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#151A21; --blanco:#FFFFFF; --suave:rgba(255,255,255,.74); --tenue:rgba(255,255,255,.56);
+  --rojo:#E5262E; --rojo-2:#C41B22; --ambar:#FFB547; --wa:#22B35E;
+  /* glass */
+  --g1:rgba(255,255,255,.10); --g2:rgba(255,255,255,.16); --g3:rgba(255,255,255,.24);
+  --gb:rgba(255,255,255,.22); --blur:saturate(160%) blur(22px);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px rgba(5,8,12,.28);
+  --disp:"Red Hat Display",system-ui,sans-serif; --sans:"Red Hat Text",system-ui,sans-serif;
+  --wrap:1320px; --pad:clamp(14px,3.4vw,36px);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.55;color:var(--blanco);background:var(--noche);font-variant-numeric:tabular-nums}
+/* fixed photographic backdrop, darkened toward the bottom so glass stays legible */
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url(img/fotos/desierto.jpg) center 40%/cover}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,26,33,.30) 0%,rgba(21,26,33,.58) 45%,rgba(21,26,33,.86) 100%)}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.glass{background:var(--g1);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border:1px solid var(--gb);box-shadow:var(--shadow);border-radius:20px}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(30,36,44,.88)}}
+
+/* floating bar */
+.top{position:sticky;top:12px;z-index:40;margin:12px auto 0;max-width:calc(var(--wrap) - 2*var(--pad));width:calc(100% - 2*var(--pad))}
+.top .in{display:flex;align-items:center;gap:20px;height:64px;padding:0 10px 0 18px;border-radius:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.01em}
+.brand img{width:50px}
+nav.links{display:flex;gap:4px}
+nav.links a{text-decoration:none;color:var(--suave);font-weight:500;padding:8px 12px;border-radius:10px}
+nav.links a:hover{background:var(--g1);color:#fff}
+.top-actions{margin-left:auto;display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 18px;border-radius:12px;border:1px solid transparent;font-weight:700;font-size:15.5px;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s,transform .15s}
+.btn-red{background:var(--rojo);color:#fff}.btn-red:hover{background:var(--rojo-2)}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#1A9A50}
+.btn-glass{background:var(--g2);border-color:var(--gb);color:#fff}.btn-glass:hover{background:var(--g3)}
+.cart-n{min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--rojo);color:#fff;font-size:13px;display:inline-grid;place-items:center}
+@keyframes bump{40%{transform:scale(1.3)}} .cart-n.bump{animation:bump .4s ease}
+@media (max-width:980px){nav.links{display:none}}
+@media (max-width:600px){.top .btn-wa{display:none}.brand span{display:none}}
+
+/* hero */
+.hero .wrap{min-height:min(86vh,820px);display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(24px,4vw,64px);align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(44px,6.4vw,92px);line-height:.95;letter-spacing:-.02em;margin:0;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero p{font-size:clamp(17px,1.5vw,20px);color:var(--suave);max-width:44ch;margin:22px 0 28px}
+.search{display:flex;max-width:620px;padding:7px;border-radius:16px}
+.search label{flex:1;display:flex;align-items:center;gap:10px;padding-left:12px;min-width:0;color:var(--suave)}
+.search input{flex:1;min-width:0;height:50px;border:0;background:transparent;outline:none;color:#fff;font:inherit;font-size:17px}
+.search input::placeholder{color:var(--tenue)}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.quick button{height:36px;padding:0 14px;border-radius:18px;background:var(--g1);border:1px solid var(--gb);color:#fff;cursor:pointer;font-size:14.5px;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}
+.quick button:hover{background:var(--g3)}
+.estado{padding:22px}
+.estado h2{font-family:var(--disp);font-size:15px;font-weight:700;color:var(--suave);margin:0 0 6px}
+.estado ul{list-style:none;margin:0;padding:0}
+.estado li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.estado li:last-child{border-bottom:0}
+.estado .ic{width:44px;height:44px;border-radius:12px;background:var(--g2);border:1px solid var(--gb);display:grid;place-items:center}
+.estado strong{display:block;font-family:var(--disp);font-size:20px;font-weight:800;line-height:1.15}
+.estado span{color:var(--suave);font-size:14.5px}
+.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.plates button{aspect-ratio:1;border-radius:14px;background:#fff;border:0;padding:0;cursor:pointer;overflow:hidden}
+.plates img{width:100%;height:100%;object-fit:contain;padding:12%;mix-blend-mode:multiply;transition:transform .3s}
+.plates button:hover img{transform:scale(1.06)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:40px}}
+
+/* store: catalog + live order */
+.tienda{padding:clamp(24px,4vw,40px) 0 clamp(56px,8vw,96px)}
+#catalogo{scroll-margin-top:96px}
+.tienda .wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+.panel{padding:22px;min-width:0}
+@media (max-width:560px){.panel{padding:12px}}
+.cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.cat-head h2{overflow-wrap:anywhere;font-family:var(--disp);font-weight:900;font-size:clamp(30px,3.4vw,44px);margin:0;line-height:1;letter-spacing:-.015em}
+.cat-head .meta{display:flex;gap:12px;align-items:center;color:var(--suave);margin-top:6px}
+.linkbtn{background:none;border:0;padding:0;color:var(--ambar);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.sort{display:flex;align-items:center;gap:8px;color:var(--suave);font-size:15px}
+.sort select{height:42px;border-radius:10px;border:1px solid var(--gb);background:rgba(21,26,33,.5);color:#fff;padding:0 10px;font:inherit;font-size:15px}
+.chips{display:flex;gap:4px;overflow-x:auto;margin-top:18px;padding:5px;border-radius:14px;background:rgba(21,26,33,.35);border:1px solid rgba(255,255,255,.12);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;height:38px;padding:0 14px;border-radius:10px;border:0;background:transparent;color:var(--suave);font-weight:600;font-size:14.5px;cursor:pointer;white-space:nowrap}
+.chip:hover{color:#fff;background:var(--g1)}
+.chip[aria-pressed="true"]{background:var(--g3);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:18px}
+@media (max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:8px}}
+.card{border-radius:16px;background:var(--g1);border:1px solid rgba(255,255,255,.16);padding:8px 8px 12px;display:flex;flex-direction:column;transition:background .2s,border-color .2s}
+.card:hover{background:var(--g2);border-color:var(--gb)}
+.card .pl{position:relative;aspect-ratio:1;border-radius:12px;background:#fff;border:0;padding:0;cursor:pointer;overflow:hidden}
+.card .pl img{width:100%;height:100%;object-fit:contain;padding:11%;mix-blend-mode:multiply;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card .pl:hover img{transform:scale(1.05)}
+.card .low{position:absolute;left:8px;top:8px;background:rgba(21,26,33,.85);color:#fff;border-radius:8px;padding:3px 8px;font-size:12.5px;font-weight:600}
+.card h3{font-size:15px;font-weight:600;line-height:1.3;margin:10px 4px 2px;cursor:pointer}
+.card .sku{font-size:13.5px;color:var(--tenue);margin:0 4px}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding:10px 4px 0;gap:6px}
+.card .price{font-family:var(--disp);font-weight:800;font-size:20px}
+.add{width:40px;height:40px;border-radius:12px;border:1px solid var(--gb);background:var(--g2);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.add:hover{background:var(--rojo);border-color:var(--rojo)}
+.add.ok{background:var(--wa);border-color:var(--wa)}
+.more{display:flex;justify-content:center;margin-top:24px}
+.empty{border:1px dashed var(--gb);border-radius:16px;padding:40px 22px;text-align:center;margin-top:18px}
+.empty h3{font-family:var(--disp);font-size:26px;margin:0 0 6px}.empty p{color:var(--suave);margin:0 0 18px}
+
+/* live order: inline sidebar on desktop, drawer on smaller screens */
+.drawer{display:flex;flex-direction:column;border-radius:20px;overflow:hidden}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 12px}
+.drawer .dh h2{font-family:var(--disp);font-weight:800;font-size:24px;margin:0}
+.drawer .dh small{display:block;color:var(--suave);font-size:14px;font-weight:500;font-family:var(--sans)}
+.lines{flex:1;overflow:auto;padding:0 16px;min-height:120px}
+.line{display:grid;grid-template-columns:60px 1fr auto;gap:12px;padding:12px 4px;border-top:1px solid rgba(255,255,255,.12);align-items:center}
+.line .t{width:60px;height:60px;border-radius:10px;background:#fff}
+.line .t img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
+.line h3{font-size:14.5px;font-weight:600;margin:0;line-height:1.3}
+.line small{color:var(--tenue);display:block;font-size:13px}
+.line .qty{height:32px;margin-top:6px}.line .qty button{width:30px}
+.line .r{text-align:right}.line .r strong{display:block;font-family:var(--disp);font-size:17px}
+.line .del{background:none;border:0;color:var(--tenue);font-size:13.5px;cursor:pointer;text-decoration:underline;padding:4px 0}
+.dfoot{padding:16px 20px 20px;background:rgba(21,26,33,.35);border-top:1px solid rgba(255,255,255,.12)}
+.tot{display:flex;justify-content:space-between;font-size:15px;padding:3px 0;color:var(--suave)}
+.tot.big{color:#fff;font-weight:700;font-size:17px;padding-top:8px;align-items:baseline}
+.tot.big span:last-child{font-family:var(--disp);font-weight:900;font-size:30px}
+.dfoot .btn{width:100%;margin-top:14px;height:52px}
+.dfoot p{font-size:13.5px;color:var(--tenue);margin:10px 0 0}
+.cart-empty{padding:28px 8px 32px;text-align:center;color:var(--suave);font-size:15px}
+.cart-empty strong{display:block;color:#fff;font-family:var(--disp);font-size:20px;margin-bottom:4px}
+@keyframes glow{0%{box-shadow:var(--shadow),0 0 0 0 rgba(255,181,71,.6)}100%{box-shadow:var(--shadow),0 0 0 14px rgba(255,181,71,0)}}
+.drawer.pulse{animation:glow .7s ease-out}
+.drawer .x{display:none}
+@media (min-width:1101px){.drawer{position:sticky;top:92px;max-height:calc(100vh - 112px)}}
+@media (max-width:1100px){
+  .tienda .wrap{grid-template-columns:minmax(0,1fr)}
+  .drawer{position:fixed;z-index:60;top:0;right:0;height:100%;width:min(440px,100vw);border-radius:20px 0 0 20px;background:rgba(21,26,33,.78);transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+  .drawer.on{transform:none;visibility:visible}
+  .drawer .x{display:grid}
+}
+/* mobile order bar */
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:36;display:none;align-items:center;gap:12px;padding:10px 10px 10px 18px;border-radius:18px}
+.bar strong{font-family:var(--disp);font-size:20px}
+.bar span{color:var(--suave);font-size:14px;display:block}
+.bar .btn{margin-left:auto;height:44px}
+@media (max-width:1100px){.bar.has{display:flex}}
+
+/* steps */
+.pasos{padding:0 0 clamp(56px,8vw,96px)}
+.pasos h2,.faq h2{font-family:var(--disp);font-weight:900;font-size:clamp(30px,3.4vw,44px);margin:0 0 20px;letter-spacing:-.015em}
+.pasos ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.pasos li{counter-increment:s;padding:24px}
+.pasos li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);font-family:var(--disp);font-weight:900;font-size:20px;margin-bottom:16px}
+.pasos strong{display:block;font-family:var(--disp);font-size:21px;font-weight:800;margin-bottom:6px}
+.pasos span{color:var(--suave)}
+@media (max-width:860px){.pasos ol{grid-template-columns:1fr}}
+
+/* faq */
+.faq{padding:0 0 clamp(56px,8vw,96px)}
+.faq .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{border-radius:16px;padding:0 20px;background:var(--g1);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);align-self:start}
+summary{list-style:none;cursor:pointer;padding:18px 30px 18px 0;font-weight:700;font-size:16.5px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;font-weight:500;color:var(--suave)}
+details[open] summary::after{content:"−"}
+details p{margin:0 0 18px;color:var(--suave)}
+@media (max-width:860px){.faq .cols{grid-template-columns:1fr}}
+
+footer{padding:0 0 28px}
+footer .in{padding:28px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;font-size:15px;color:var(--suave)}
+footer h4{color:#fff;font-family:var(--disp);font-size:17px;margin:0 0 10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+footer button.f{background:none;border:0;padding:0;color:inherit;cursor:pointer;text-align:left}
+footer button.f:hover,footer a:hover{color:#fff}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){footer .in{grid-template-columns:1fr 1fr}}
+@media (max-width:1100px){footer{padding-bottom:96px}}
+
+/* overlays */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(10,13,17,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.scrim.on{opacity:1;visibility:visible}
+.modal{position:fixed;z-index:60;left:50%;top:50%;width:min(940px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:rgba(21,26,33,.72);transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s,visibility .3s}
+.modal.on{transform:translate(-50%,-50%);opacity:1;visibility:visible}
+.modal .in{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.modal .big{background:#fff;aspect-ratio:1;margin:12px;border-radius:14px}
+.modal .big img{width:100%;height:100%;object-fit:contain;padding:10%;mix-blend-mode:multiply}
+.modal .info{padding:28px 26px 26px 14px;display:flex;flex-direction:column}
+.modal .kicker{color:var(--ambar);font-weight:700;font-size:14.5px}
+.modal h2{font-family:var(--disp);font-weight:900;font-size:clamp(26px,3vw,36px);line-height:1.02;margin:6px 0 12px;letter-spacing:-.01em}
+.modal .p{font-family:var(--disp);font-weight:900;font-size:38px;line-height:1}
+.modal .p small{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--suave);margin-left:8px}
+.specs{margin:18px 0;border-top:1px solid rgba(255,255,255,.14)}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+.specs dt{color:var(--suave)}.specs dd{margin:0;font-weight:600;text-align:right}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--gb);border-radius:12px;height:46px;background:var(--g1)}
+.qty button{width:40px;height:100%;border:0;background:none;font-size:20px;cursor:pointer;color:#fff}
+.qty output{min-width:26px;text-align:center;font-weight:700}
+.buy{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.buy .btn{flex:1}
+.x{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:12px;border:1px solid var(--gb);background:rgba(21,26,33,.6);color:#fff;cursor:pointer;display:grid;place-items:center;z-index:2}
+.drawer .x{position:static}
+@media (max-width:720px){.modal{top:auto;bottom:0;left:0;width:100%;max-height:92vh;border-radius:20px 20px 0 0;transform:translateY(30px)}.modal.on{transform:none}.modal .in{grid-template-columns:1fr}.modal .big{aspect-ratio:auto;height:240px}.modal .info{padding:10px 18px 24px}}
+.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,20px);opacity:0;visibility:hidden;background:rgba(21,26,33,.8);border-radius:14px;padding:12px 12px 12px 18px;display:flex;gap:16px;align-items:center;transition:all .25s;max-width:calc(100vw - 32px);font-size:15px}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast span{flex:1}
+.toast button{background:#fff;color:var(--noche);border:0;border-radius:10px;height:36px;padding:0 12px;font-weight:700;cursor:pointer;white-space:nowrap}
+@media (max-width:1100px){.toast{bottom:92px;width:calc(100vw - 32px)}}
+</style>
+</head>
+<body>
+
+<header class="top" data-top>
+  <div class="in glass">
+    <a class="brand" href="#" aria-label="Hondu Truck, inicio"><img src="logo-blanco.png" alt="" width="50" height="30"><span>HONDU TRUCK</span></a>
+    <nav class="links" aria-label="Secciones"><a href="#catalogo">Catálogo</a><a href="#como">Cómo pedir</a><a href="#preguntas">Preguntas</a></nav>
+    <div class="top-actions">
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="btn btn-glass" type="button" data-open-cart aria-label="Ver pedido">Pedido <span class="cart-n" data-cart-n hidden>0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <h1 id="h1">Todo para tu camión en un solo pedido</h1>
+      <p>Arma tu lista de piezas, revisa el total al momento y envíala por WhatsApp. Te confirmamos existencia y forma de pago el mismo día.</p>
+      <form class="search glass" role="search" data-search>
+        <label><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Buscar pieza</span>
+        <input type="search" placeholder="Nombre de la pieza o número de parte" autocomplete="off" enterkeyhint="search"></label>
+        <button class="btn btn-red" type="submit">Buscar</button>
+      </form>
+      <div class="quick" aria-label="Búsquedas frecuentes"><button type="button" data-q="Tapa tuerca">Tapa tuerca</button><button type="button" data-q="Mano libre">Mano libre</button><button type="button" data-q="Lodera">Lodera</button><button type="button" data-q="Vía doble cara">Vía LED</button><button type="button" data-q="Antena">Antena</button></div>
+    </div>
+    <aside class="estado glass" aria-labelledby="est-t">
+      <h2 id="est-t">Comprar con nosotros</h2>
+      <ul>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7"/><circle cx="5.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg></span><div><strong>24–48 h</strong><span>Envío a todo Honduras</span></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><div><strong>6 meses</strong><span>Garantía por defecto de fábrica</span></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12Z"/></svg></span><div><strong>Mismo día</strong><span>Cotización por WhatsApp</span></div></li>
+      </ul>
+      <div class="plates" aria-label="Piezas destacadas">
+        <button type="button" data-open="10" aria-label="Ver cobra cromada"><img src="img/productos/cobra-cromada-metalica-13-15-18.jpg" alt=""></button>
+        <button type="button" data-open="1" aria-label="Ver tapa tuerca octagonal"><img src="img/productos/tapa-tuerca-33mm-octagonal-5in-rosca.jpg" alt=""></button>
+        <button type="button" data-open="41" aria-label="Ver vía doble cara 42 LED"><img src="img/productos/via-doble-cara-42led-ambar-rojo.jpg" alt=""></button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="tienda" id="catalogo" aria-labelledby="cat-t">
+  <div class="wrap">
+    <div class="panel glass">
+      <div class="cat-head">
+        <div><h2 id="cat-t" data-heading data-default="Catálogo">Catálogo</h2><div class="meta"><span data-count></span><button class="linkbtn" type="button" data-clear hidden>Quitar búsqueda</button></div></div>
+        <label class="sort">Ordenar<select data-sort><option value="rel">Destacados</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
+      </div>
+      <div class="chips" data-chips role="toolbar" aria-label="Filtrar por categoría"></div>
+      <div class="grid" data-grid aria-live="polite"></div>
+      <div class="empty" data-empty hidden><h3>Esa pieza no está en el catálogo</h3><p>Envíanos el número de parte o una foto y te decimos si la conseguimos.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a></div>
+      <div class="more"><button class="btn btn-glass" type="button" data-more hidden>Mostrar más</button></div>
+    </div>
+
+    <aside class="drawer glass" role="region" aria-labelledby="c-t" data-drawer>
+      <div class="dh"><h2 id="c-t">Tu pedido<small>Se actualiza mientras agregas piezas</small></h2><button class="x" type="button" data-close aria-label="Cerrar pedido"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      <div class="lines" data-lines></div>
+      <div class="dfoot" data-cart-foot>
+        <div class="tot"><span>Subtotal</span><span data-sub></span></div>
+        <div class="tot"><span>Envío</span><span>Se confirma por WhatsApp</span></div>
+        <div class="tot big"><span>Total</span><span data-total></span></div>
+        <a class="btn btn-wa" data-order href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+        <p>Te respondemos para confirmar existencia, forma de pago y envío.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="pasos" id="como" aria-labelledby="como-t">
+  <div class="wrap">
+    <h2 id="como-t">Cómo pedir</h2>
+    <ol>
+      <li class="glass"><strong>Arma tu pedido</strong><span>Agrega piezas del catálogo. El total se calcula al momento.</span></li>
+      <li class="glass"><strong>Envíalo por WhatsApp</strong><span>Te llega listo con piezas, números de parte y total. Te confirmamos existencia y forma de pago.</span></li>
+      <li class="glass"><strong>Recíbelo en 24–48 h</strong><span>Enviamos a cualquier ciudad de Honduras, con salidas diarias a San Pedro Sula, Tegucigalpa, Choloma y Puerto Cortés.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq" id="preguntas" aria-labelledby="faq-t">
+  <div class="wrap">
+    <h2 id="faq-t">Preguntas frecuentes</h2>
+    <div class="cols">
+      <details><summary>¿Los precios incluyen impuesto?</summary><p>Sí. Todos los precios están en lempiras e incluyen ISV.</p></details>
+      <details><summary>¿Cuánto cuesta el envío?</summary><p>El costo de envío se confirma por WhatsApp junto con tu pedido, según la ciudad de destino.</p></details>
+      <details><summary>¿Qué garantía tienen las piezas?</summary><p>Seis meses por defecto de fábrica.</p></details>
+      <details><summary>No encuentro la pieza que necesito</summary><p>Mándanos el número de parte o una foto de la pieza por WhatsApp y te decimos si la conseguimos.</p></details>
+      <details><summary>¿Cuál es el horario de atención?</summary><p>Lunes a sábado, de 8:00 a. m. a 5:00 p. m.</p></details>
+      <details><summary>¿Tengo que pagar en línea?</summary><p>No. Envías tu pedido por WhatsApp y ahí acordamos la forma de pago.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="in glass">
+    <div><img src="logo-blanco.png" alt="Hondu Truck" width="96" loading="lazy" style="margin-bottom:8px"><p style="margin:0;max-width:30ch">Accesorios y repuestos para camiones de carga en Honduras.</p></div>
+    <div><h4>Contacto</h4><ul><li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp 9775-7535</a></li><li>Lunes a sábado</li><li>8:00 a. m. a 5:00 p. m.</li></ul></div>
+    <div><h4>Categorías</h4><ul data-foot-cats></ul></div>
+    <div class="legal"><span>© <span data-year>2026</span> Hondu Truck. Precios en lempiras, ISV incluido.</span><span>Garantía de 6 meses por defecto de fábrica.</span></div>
+  </div></div>
+</footer>
+
+<div class="bar glass" data-bar><div><strong data-bar-total>L 0</strong><span data-bar-n>0 piezas</span></div><button class="btn btn-wa" type="button" data-open-cart>Ver pedido</button></div>
+
+<div class="scrim" data-scrim></div>
+<div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="m-name" data-modal>
+  <button class="x" type="button" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="in">
+    <div class="big"><img data-m-img alt=""></div>
+    <div class="info">
+      <div class="kicker" data-m-cat></div>
+      <h2 id="m-name" data-m-name></h2>
+      <div class="p"><span data-m-price></span><small>ISV incluido</small></div>
+      <dl class="specs" data-m-specs></dl>
+      <div class="buy">
+        <div class="qty"><button type="button" data-m-dec aria-label="Quitar uno">−</button><output data-m-qty>1</output><button type="button" data-m-inc aria-label="Agregar uno">+</button></div>
+        <button class="btn btn-red" type="button" data-m-add>Agregar al pedido</button>
+        <a class="btn btn-wa" data-m-wa href="#" target="_blank" rel="noopener" style="flex-basis:100%">Preguntar por esta pieza</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast glass" role="status" data-toast><span data-toast-t></span><button type="button" data-open-cart>Ver pedido</button></div>
+
+<script>
+var wide = matchMedia("(min-width:1101px)");
+window.HT = {
+  offset: 96, scrollAt: 20,
+  cartEmpty: '<div class="cart-empty"><strong>Aún no hay piezas</strong>Agrega piezas del catálogo y aquí verás el total.</div>',
+  card: function(p,h){var s=h.stock(p);
+    return '<article class="card"><button class="pl" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy" width="550" height="550">'+(s?'<span class="low">'+s+'</span>':'')+'</button>'+
+      '<h3 data-open="'+p.id+'">'+h.esc(p.name)+'</h3><div class="sku">No. '+h.esc(p.sku)+'</div>'+
+      '<div class="row"><span class="price">'+h.money(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'" aria-label="Agregar '+h.esc(p.name)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></article>';},
+  chip: function(c,active){return '<button class="chip" type="button" data-cat="'+(c?c.k:"")+'" aria-pressed="'+active+'">'+(c?c.n:"Todo")+'</button>'},
+  inlineCart: function(){
+    if(!wide.matches) return false;
+    var d=document.querySelector("[data-drawer]"); d.classList.remove("pulse"); void d.offsetWidth; d.classList.add("pulse");
+    if(d.getBoundingClientRect().top>window.innerHeight) document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+    return true;
+  },
+  afterCart: function(n,sub){
+    var b=document.querySelector("[data-bar]"); b.classList.toggle("has",n>0);
+    document.querySelector("[data-bar-total]").textContent="L "+sub.toLocaleString("en-US");
+    document.querySelector("[data-bar-n]").textContent=n===1?"1 pieza en tu pedido":n+" piezas en tu pedido";
+    if(n&&wide.matches){var d=document.querySelector("[data-drawer]");d.classList.remove("pulse");void d.offsetWidth;d.classList.add("pulse")}
+  }
+};
+</script>
+<script src="core.js"></script>
+</body>
+</html>

@@ -178,13 +178,14 @@ function add(id,n){
 function renderCart(){
   var n=cartCount(), sub=0;
   $$("[data-cart-n]").forEach(function(b){b.textContent=n;b.hidden=!n});
-  if(!S.cart.length){$("[data-lines]").innerHTML=tpl.empty;$("[data-cart-foot]").hidden=true;return}
+  if(!S.cart.length){$("[data-lines]").innerHTML=tpl.empty;$("[data-cart-foot]").hidden=true;if(T.afterCart)T.afterCart(0,0);return}
   $("[data-cart-foot]").hidden=false;
   $("[data-lines]").innerHTML=S.cart.map(function(l){var p=byId(l.id);sub+=p.price*l.qty;return tpl.line(p,l,H)}).join("");
   $("[data-sub]").textContent=money(sub); $("[data-total]").textContent=money(sub);
   var msg="Hola Hondu Truck, quiero hacer este pedido:\n\n"+S.cart.map(function(l){var p=byId(l.id);return "• "+l.qty+" × "+p.name+" (No. "+p.sku+") – "+money(p.price*l.qty)}).join("\n")+
     "\n\nTotal: "+money(sub)+"\n\nNombre:\nCiudad de envío:";
   $("[data-order]").href=wa(msg);
+  if(T.afterCart)T.afterCart(n,sub);
 }
 
 /* ============ Capas ============ */
@@ -194,7 +195,7 @@ function closeAll(){
   document.body.style.overflow=""; S.open=null;
   if(lastFocus&&lastFocus.focus){lastFocus.focus();lastFocus=null}
 }
-function openCart(){closeAll();lastFocus=document.activeElement;renderCart();show("[data-drawer]");hideToast();setTimeout(function(){var x=$("[data-drawer] [data-close]");if(x)x.focus()},50)}
+function openCart(){if(T.inlineCart&&T.inlineCart()){renderCart();hideToast();return}closeAll();lastFocus=document.activeElement;renderCart();show("[data-drawer]");hideToast();setTimeout(function(){var x=$("[data-drawer] [data-close]");if(x)x.focus()},50)}
 var tt;
 function toast(t){$("[data-toast-t]").textContent=t;$("[data-toast]").classList.add("on");clearTimeout(tt);tt=setTimeout(hideToast,3200)}
 function hideToast(){$("[data-toast]").classList.remove("on")}
@@ -228,7 +229,7 @@ var bar=$("[data-top]");
 if(bar){var onScroll=function(){bar.classList.toggle("is-scrolled",window.scrollY>(T.scrollAt||360))};window.addEventListener("scroll",onScroll,{passive:true});onScroll()}
 $$("[data-year]").forEach(function(el){el.textContent=new Date().getFullYear()});
 
-window.HTcore={all:ALL,cats:CATS,count:count,h:H,byId:byId,open:openProduct,add:add,search:search};
+window.HTcore={all:ALL,cats:CATS,count:count,h:H,byId:byId,open:openProduct,add:add,search:search,pickCat:pickCat,wa:wa};
 renderGrid(); renderCart();
 if(T.ready) T.ready(window.HTcore);
 })();
