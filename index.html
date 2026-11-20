@@ -8,48 +8,58 @@
 <meta name="theme-color" content="#1D2125">
 <link rel="icon" href="1/logo.png">
 <style>
-:root{--bar:52px;--fondo:#1D2125;--linea:rgba(255,255,255,.14);--suave:#AEB6BE;--rojo:#C8161D}
+:root{--fondo:#1D2125;--fondo-2:#262B31;--linea:rgba(255,255,255,.16);--suave:#B4BCC4;--rojo:#C8161D}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:var(--fondo);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff}
-.bar{height:var(--bar);display:flex;align-items:center;gap:14px;padding:0 12px 0 14px;border-bottom:1px solid var(--linea)}
+html,body{margin:0;height:100%}
+body{display:flex;flex-direction:column;background:var(--fondo);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff}
+.bar{flex-shrink:0;background:var(--fondo);border-bottom:3px solid var(--rojo);padding:12px 16px 14px}
+.bar-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;white-space:nowrap}
-.marca img{width:40px}
-.marca span{color:var(--suave);font-weight:500}
-.sel{display:flex;gap:4px;margin:0 auto;padding:4px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--linea);overflow-x:auto;scrollbar-width:none;max-width:100%}
-.sel::-webkit-scrollbar{display:none}
-.sel button{flex-shrink:0;height:34px;padding:0 14px;border:0;border-radius:7px;background:transparent;color:var(--suave);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap}
-.sel button b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:5px;background:rgba(255,255,255,.1);font-size:12.5px;margin-right:8px;color:#fff}
-.sel button:hover{color:#fff;background:rgba(255,255,255,.06)}
-.sel button[aria-pressed="true"]{background:#fff;color:var(--fondo)}
-.sel button[aria-pressed="true"] b{background:var(--rojo)}
-.sel button:focus-visible,.abrir:focus-visible{outline:2px solid #F2A900;outline-offset:2px}
-.abrir{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:7px;border:1px solid var(--linea);color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.marca img{width:42px}
+.titulo{font-size:17px;font-weight:700}
+.titulo span{color:var(--suave);font-weight:500}
+.abrir{margin-left:auto;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--linea);color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 .abrir:hover{border-color:#fff}
-iframe{display:block;width:100%;height:calc(100% - var(--bar));border:0;background:#fff}
-@media (max-width:1100px){.marca span{display:none}}
-@media (max-width:760px){
-  .bar{gap:8px;padding:0 8px}
-  .marca{display:none}
-  .sel{margin:0;flex:1}
-  .sel button{padding:0 10px}
-  .sel button .n{display:none}
-  .sel button b{margin-right:0}
-  .sel button[aria-pressed="true"] .n{display:inline;margin-left:8px}
+.sel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.sel button{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:62px;padding:10px 14px;border:2px solid var(--linea);border-radius:10px;background:var(--fondo-2);color:#fff;font:inherit;text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
+.sel button:hover{border-color:rgba(255,255,255,.5)}
+.sel button small{font-size:13px;color:var(--suave);font-weight:600}
+.sel button strong{font-size:17px;line-height:1.2}
+.sel button[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--fondo)}
+.sel button[aria-pressed="true"] small{color:var(--rojo)}
+.sel button[aria-pressed="true"]::after{content:"Viendo ahora";position:absolute;right:10px;top:10px;font-size:12px;font-weight:700;color:#fff;background:var(--rojo);padding:2px 8px;border-radius:10px}
+.sel button:focus-visible,.abrir:focus-visible{outline:3px solid #F2A900;outline-offset:2px}
+iframe{flex:1;display:block;width:100%;min-height:0;border:0;background:#fff}
+@media (max-width:1100px){.sel button[aria-pressed="true"]::after{display:none}}
+@media (max-width:860px){
+  .bar{padding:10px 10px 12px}
+  .marca img{width:34px}
+  .titulo{font-size:15.5px}
+  .titulo span{display:block;font-size:13.5px}
+  .sel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -10px;padding:0 10px}
+  .sel::-webkit-scrollbar{display:none}
+  .sel button{flex:0 0 auto;min-width:148px;min-height:56px;padding:8px 12px;scroll-snap-align:start}
+  .sel button strong{font-size:16px}
   .abrir span{display:none}
 }
+.titulo em{font-style:normal;display:none}
+@media (max-width:860px){.titulo em{display:inline}}
 </style>
 </head>
 <body>
 <header class="bar">
-  <div class="marca"><img src="1/logo-blanco.png" alt="">Hondu Truck <span>Propuestas de sitio web</span></div>
-  <nav class="sel" aria-label="Elegir propuesta" data-sel>
-    <button type="button" data-p="1"><b>1</b><span class="n">Clara</span></button>
-    <button type="button" data-p="2"><b>2</b><span class="n">Noche y cromo</span></button>
-    <button type="button" data-p="3"><b>3</b><span class="n">Institucional</span></button>
-    <button type="button" data-p="4"><b>4</b><span class="n">Catálogo técnico</span></button>
-    <button type="button" data-p="5"><b>5</b><span class="n">Cabina (vidrio)</span></button>
+  <div class="bar-top">
+    <div class="marca"><img src="1/logo-blanco.png" alt=""></div>
+    <div class="titulo" id="sel-t">Elige una propuesta de diseño <span>Toca una opción para ver ese diseño aquí abajo<em class="m"> (desliza para ver las 5)</em></span></div>
+    <a class="abrir" data-abrir href="1/" target="_blank" rel="noopener" title="Abrir esta propuesta en una pestaña nueva"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span>Abrir en pestaña nueva</span></a>
+  </div>
+  <nav class="sel" aria-labelledby="sel-t" data-sel>
+    <button type="button" data-p="1"><small>Propuesta 1</small><strong>Clara</strong></button>
+    <button type="button" data-p="2"><small>Propuesta 2</small><strong>Noche y cromo</strong></button>
+    <button type="button" data-p="3"><small>Propuesta 3</small><strong>Institucional</strong></button>
+    <button type="button" data-p="4"><small>Propuesta 4</small><strong>Catálogo técnico</strong></button>
+    <button type="button" data-p="5"><small>Propuesta 5</small><strong>Cabina (vidrio)</strong></button>
   </nav>
-  <a class="abrir" data-abrir href="1/" target="_blank" rel="noopener" title="Abrir esta propuesta en una pestaña nueva"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span>Abrir sola</span></a>
 </header>
 <iframe data-frame title="Propuesta de sitio web" src="1/"></iframe>
 <script>
