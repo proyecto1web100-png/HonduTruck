@@ -3,234 +3,199 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hondu Truck · Guía de piezas para tu camión</title>
-<meta name="description" content="Toca una zona del camión y conoce cada pieza: qué hace, qué revisar antes de comprar y cuánto cuesta. Envíos a todo Honduras en 24–48 h.">
-<meta name="theme-color" content="#1A1E23">
+<title>Hondu Truck · Catálogo técnico de accesorios y repuestos para camión</title>
+<meta name="description" content="Catálogo completo por categoría: qué es cada pieza, qué revisar antes de comprar, número de parte, existencia y precio. Envíos a todo Honduras.">
+<meta name="theme-color" content="#1E2328">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --papel:#FFFFFF; --gris:#F1F3F5; --gris-2:#E4E8EC; --linea:#D5DAE0;
-  --tinta:#1A1E23; --texto-2:#5A626B; --rojo:#C8161D; --rojo-2:#A51117; --azul:#24527A; --ambar:#F2A900; --wa:#1FA855;
-  --serif:"Source Serif 4",Georgia,serif; --sans:"Instrument Sans",system-ui,sans-serif;
+  --tinta:#1E2328; --t2:#5F6670; --linea:#DADDE1; --gris:#F4F5F6; --rojo:#C8161D; --rojo-2:#A51117; --wa:#1E9E52;
+  --serif:"Source Serif 4",Georgia,serif; --sans:"Source Sans 3",system-ui,sans-serif;
   --wrap:1240px; --pad:clamp(16px,4vw,40px);
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.55;color:var(--tinta);background:var(--papel);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.55;color:var(--tinta);background:#fff;font-variant-numeric:tabular-nums}
 img{display:block;max-width:100%}
 a{color:inherit}
 button{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.005em}
 
-/* header */
-.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);border-bottom:1px solid var(--linea)}
-.top .wrap{display:flex;align-items:center;gap:28px;height:70px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px}
-.brand img{width:56px}
-nav.links{display:flex;gap:24px;font-weight:500;font-size:15.5px;color:var(--texto-2)}
-nav.links a{text-decoration:none}nav.links a:hover{color:var(--tinta)}
-.top-actions{margin-left:auto;display:flex;gap:8px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 18px;border-radius:6px;border:1px solid transparent;font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
-.btn-ink{background:var(--tinta);color:#fff}.btn-ink:hover{background:#000}
-.btn-red{background:var(--rojo);color:#fff}.btn-red:hover{background:var(--rojo-2)}
-.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#178a45}
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--tinta)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand img{width:54px}
+.brand span{font-weight:700;font-size:17px;line-height:1.1}
+.brand small{display:block;font-weight:400;font-size:13px;color:var(--t2)}
+.hsearch{flex:1;max-width:520px;display:flex;align-items:center;height:44px;border:1px solid var(--linea);padding:0 4px 0 12px;margin-left:auto}
+.hsearch:focus-within{border-color:var(--tinta)}
+.hsearch svg{color:var(--t2);flex-shrink:0}
+.hsearch input{flex:1;min-width:0;border:0;outline:none;font:inherit;font-size:16px;padding:0 8px;height:100%}
+.hsearch button{height:34px;border:0;background:var(--tinta);color:#fff;padding:0 14px;font-weight:600;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;border:1px solid transparent;font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.btn-dark{background:var(--tinta);color:#fff}.btn-dark:hover{background:#000}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#178444}
 .btn-line{border-color:var(--linea);background:#fff}.btn-line:hover{border-color:var(--tinta)}
-.cart-n{min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--rojo);color:#fff;font-size:13px;display:inline-grid;place-items:center}
-@keyframes bump{40%{transform:scale(1.3)}} .cart-n.bump{animation:bump .4s ease}
-@media (max-width:900px){nav.links{display:none}}
-@media (max-width:560px){.top .btn-wa{display:none}}
+.cart-n{min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--rojo);color:#fff;font-size:12.5px;display:inline-grid;place-items:center}
+@keyframes bump{40%{transform:scale(1.25)}} .cart-n.bump{animation:bump .4s ease}
+@media (max-width:860px){.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}.hsearch{order:3;flex-basis:100%;max-width:none;margin-left:0}.brand small{display:none}.top .btn-wa{display:none}.top .btn-line{margin-left:auto}}
 
 /* intro */
-.intro{padding:clamp(32px,4.5vw,56px) 0 clamp(24px,3vw,36px)}
-.intro .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,5vw,72px);align-items:end}
-.intro h1{font-size:clamp(36px,4.4vw,58px);line-height:1.02;margin:0}
-.intro p{font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);color:var(--texto-2);margin:18px 0 0;max-width:40ch}
-.search{display:flex;margin-top:26px;max-width:560px;border:1px solid var(--linea);border-radius:8px;background:#fff;padding:5px}
-.search label{flex:1;display:flex;align-items:center;gap:10px;padding-left:12px;min-width:0;color:var(--texto-2)}
-.search input{flex:1;min-width:0;height:46px;border:0;outline:none;font:inherit;color:var(--tinta)}
-.datos{list-style:none;margin:0;padding:0;border-top:2px solid var(--tinta)}
-.datos li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--linea);font-size:15.5px}
-.datos li span{color:var(--texto-2)}
-.datos li strong{text-align:right}
+.intro{border-bottom:1px solid var(--linea)}
+.intro .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,72px);padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(32px,4vw,48px)}
+.intro h1{font-size:clamp(34px,4.2vw,54px);line-height:1.08;margin:0}
+.intro p{font-size:19px;color:var(--t2);margin:16px 0 0;max-width:52ch}
+.ficha{margin:0;border-top:2px solid var(--tinta);font-size:15.5px}
+.ficha div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--linea)}
+.ficha dt{font-weight:600}
+.ficha dd{margin:0;color:#3D434A}
 @media (max-width:860px){.intro .wrap{grid-template-columns:1fr}}
 
-/* the diagram */
-.mapa{background:var(--gris);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:clamp(32px,5vw,56px) 0}
-.mapa-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-.mapa-head h2{font-size:clamp(28px,3.2vw,40px);margin:0;line-height:1.05}
-.mapa-head p{margin:6px 0 0;color:var(--texto-2)}
-.mapa-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:20px;align-items:start}
-.lienzo{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:18px 18px 14px}
-.truck{position:relative;aspect-ratio:710/420}
-.truck svg{position:absolute;inset:0;width:100%;height:100%}
-.hot{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--rojo);box-shadow:0 2px 8px rgba(26,30,35,.35);cursor:pointer;padding:0;display:grid;place-items:center;transition:transform .15s,background .15s}
-.hot::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
-.hot:hover{transform:translate(-50%,-50%) scale(1.15)}
-.hot[aria-pressed="true"]{background:var(--azul);transform:translate(-50%,-50%) scale(1.2)}
-.hot .tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--tinta);color:#fff;font-size:13px;font-weight:600;padding:4px 8px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
-.hot:hover .tip,.hot:focus-visible .tip{opacity:1}
-@keyframes ring{0%{box-shadow:0 0 0 0 rgba(200,22,29,.55)}100%{box-shadow:0 0 0 16px rgba(200,22,29,0)}}
-.truck.hint .hot{animation:ring 1.6s ease-out 3}
-.zonas{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--gris-2)}
-.zonas button{height:36px;padding:0 12px;border-radius:18px;border:1px solid var(--linea);background:#fff;font-size:14.5px;font-weight:500;cursor:pointer}
-.zonas button:hover{border-color:var(--tinta)}
-.zonas button[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
-.ficha{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:24px;min-height:100%}
-.ficha .zona{color:var(--azul);font-weight:600;font-size:14.5px}
-.ficha h3{font-size:30px;line-height:1.05;margin:4px 0 10px}
-.ficha .que{font-family:var(--serif);font-size:18px;line-height:1.55;margin:0 0 18px}
-.ficha h4{font-size:14.5px;margin:0 0 8px;font-weight:700}
-.ficha ul.check{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
-.ficha ul.check li{display:grid;grid-template-columns:22px 1fr;gap:6px;font-size:15.5px;line-height:1.45}
-.ficha ul.check li::before{content:"";width:16px;height:16px;margin-top:3px;border-radius:4px;background:var(--gris) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2324527A' stroke-width='3.2'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat;border:1px solid var(--linea)}
-.minis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
-.mini{border:1px solid var(--linea);border-radius:8px;background:#fff;padding:6px 6px 8px;cursor:pointer;text-align:left}
-.mini:hover{border-color:var(--tinta)}
-.mini span.i{display:block;aspect-ratio:1;background:var(--gris)}
-.mini img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
-.mini b{display:block;font-size:14px;margin-top:6px}
-.mini small{display:block;font-size:12px;color:var(--texto-2);line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.ficha .btn{width:100%}
-@media (max-width:960px){.mapa-grid{grid-template-columns:1fr}}
-@media (max-width:560px){.hot{width:24px;height:24px}.hot::after{width:6px;height:6px}.hot .tip{display:none}.lienzo{padding:10px}.minis{grid-template-columns:repeat(3,1fr)}.minis .mini:nth-child(4){display:none}.ficha{padding:18px}.ficha h3{font-size:26px}}
+/* body: index + chapters */
+.cuerpo .wrap{display:grid;grid-template-columns:250px minmax(0,1fr);gap:clamp(24px,4vw,56px);padding-top:40px;padding-bottom:72px}
+.indice{position:sticky;top:96px;align-self:start}
+.indice h2{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--t2);margin:0 0 8px}
+.indice ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--tinta)}
+.indice ol a{display:grid;grid-template-columns:26px 1fr auto;gap:6px;padding:9px 4px;border-bottom:1px solid var(--linea);text-decoration:none;font-size:15.5px;color:#3D434A}
+.indice ol a span:first-child{color:var(--t2)}
+.indice ol a small{color:var(--t2)}
+.indice ol a:hover{background:var(--gris)}
+.indice ol a[aria-current="true"]{color:var(--tinta);font-weight:600;box-shadow:inset 3px 0 0 var(--rojo)}
+.indice .ayuda{margin-top:20px;padding:16px;background:var(--gris);font-size:15px}
+.indice .ayuda p{margin:0 0 12px;color:#3D434A}
+.indice .ayuda .btn{width:100%;height:42px}
+@media (max-width:960px){
+  .cuerpo .wrap{grid-template-columns:minmax(0,1fr);padding-top:0}
+  .indice{position:sticky;top:110px;z-index:5;background:#fff;margin:0 calc(var(--pad)*-1);padding:8px var(--pad);border-bottom:1px solid var(--linea)}
+  .indice h2,.indice .ayuda{display:none}
+  .indice ol{display:flex;gap:6px;overflow-x:auto;border:0;scrollbar-width:none}
+  .indice ol::-webkit-scrollbar{display:none}
+  .indice ol a{display:flex;gap:6px;white-space:nowrap;border:1px solid var(--linea);padding:6px 12px;font-size:14.5px}
+  .indice ol a span:first-child,.indice ol a small{display:none}
+  .indice ol a[aria-current="true"]{box-shadow:none;background:var(--tinta);color:#fff;border-color:var(--tinta)}
+}
+@media (max-width:860px){.indice{top:118px}}
 
-.sec{padding:clamp(48px,7vw,88px) 0}
-.h2{font-size:clamp(30px,3.6vw,46px);line-height:1.04;margin:0}
-.lead{font-family:var(--serif);font-size:18px;color:var(--texto-2);max-width:56ch;margin:10px 0 0}
+.cap{padding:8px 0 48px;scroll-margin-top:96px}
+.cap+.cap{border-top:1px solid var(--linea);padding-top:40px}
+.cap header{display:flex;align-items:baseline;gap:14px}
+.cap header span{font-family:var(--serif);font-size:18px;color:var(--t2)}
+.cap h2{font-size:clamp(26px,2.8vw,34px);margin:0;line-height:1.15}
+.cap .que{font-size:18px;color:#3D434A;max-width:62ch;margin:10px 0 18px}
+.revisar{border-left:3px solid var(--tinta);padding:4px 0 4px 16px;margin:0 0 22px;max-width:62ch}
+.revisar h3{font-family:var(--sans);font-size:15px;font-weight:700;margin:0 0 4px}
+.revisar ul{margin:0;padding-left:18px;font-size:16px;color:#3D434A}
+.revisar li{margin:2px 0}
+@media (max-width:960px){.cap,.resultados{scroll-margin-top:170px}}
 
-/* comparison table */
-.comp{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,56px);align-items:start}
-.notas{display:grid;gap:12px;margin-top:22px}
-.nota{border-left:3px solid var(--azul);padding:4px 0 4px 14px}
-.nota strong{display:block}
-.nota span{color:var(--texto-2);font-size:15.5px}
-.tabla-wrap{overflow-x:auto;border:1px solid var(--linea);border-radius:10px}
-table{width:100%;border-collapse:collapse;min-width:640px;font-size:15.5px}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--linea);vertical-align:middle}
-th{background:var(--gris);font-size:13.5px;font-weight:700;color:var(--texto-2)}
-tr:last-child td{border-bottom:0}
-td .th{width:52px;height:52px;background:var(--gris);border-radius:6px;border:0;padding:0;cursor:pointer}
-td .th img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
-td.p{font-weight:700;text-align:right;white-space:nowrap}
-.pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:13.5px;font-weight:600;background:var(--gris)}
-.pill.r{background:#E3ECF5;color:var(--azul)}
-.add-s{height:36px;padding:0 12px;border:1px solid var(--tinta);border-radius:6px;background:#fff;font-weight:600;cursor:pointer;font-size:14.5px}
-.add-s:hover,.add-s.ok{background:var(--tinta);color:#fff}
-@media (max-width:860px){.comp{grid-template-columns:1fr}}
-
-/* catalog */
-#catalogo{scroll-margin-top:80px;background:var(--gris);border-top:1px solid var(--linea)}
-.cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.cat-head .meta{display:flex;gap:14px;align-items:center;color:var(--texto-2);margin-top:6px}
-.linkbtn{background:none;border:0;padding:0;color:var(--rojo);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.sort{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--texto-2)}
-.sort select{height:42px;border:1px solid var(--linea);border-radius:6px;padding:0 10px;font:inherit;font-size:15px;background:#fff;color:var(--tinta)}
-.chips{display:flex;gap:6px;overflow-x:auto;margin:20px calc(var(--pad)*-1) 0;padding:0 var(--pad);scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex-shrink:0;height:38px;padding:0 14px;border-radius:19px;border:1px solid var(--linea);background:#fff;font-weight:500;font-size:14.5px;cursor:pointer;white-space:nowrap}
-.chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:20px}
-@media (max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
-.card{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:10px 10px 14px;display:flex;flex-direction:column}
-.card .ph{aspect-ratio:1;background:var(--gris);border-radius:6px;border:0;padding:0;cursor:pointer;position:relative}
-.card .ph img{width:100%;height:100%;object-fit:contain;padding:10%;mix-blend-mode:multiply}
-.card .low{position:absolute;left:8px;top:8px;background:#fff;border-radius:4px;padding:2px 7px;font-size:12.5px;font-weight:600}
-.card h3{font-family:var(--sans);font-size:15.5px;font-weight:600;line-height:1.3;margin:10px 4px 2px;cursor:pointer;letter-spacing:0}
-.card .sku{font-size:13.5px;color:var(--texto-2);margin:0 4px}
-.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding:10px 4px 0;gap:8px}
-.card .price{font-weight:700;font-size:19px}
-.add{height:38px;padding:0 12px;border-radius:6px;border:1px solid var(--tinta);background:#fff;font-weight:600;font-size:14.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+/* spec table */
+.tabla{width:100%;border-collapse:collapse;font-size:16px}
+.tabla th{font-size:13.5px;font-weight:700;color:var(--t2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--tinta)}
+.tabla td{padding:10px;border-bottom:1px solid var(--linea);vertical-align:middle}
+.tabla .n{text-align:right}
+.tabla .th{width:64px;height:64px;border:1px solid var(--linea);background:#fff;padding:0;cursor:pointer;display:block}
+.tabla .th img{width:100%;height:100%;object-fit:contain;padding:6%}
+.tabla .nm{font-weight:600;cursor:pointer}
+.tabla .nm:hover{text-decoration:underline}
+.tabla .c{display:block;font-size:14px;color:var(--t2);font-weight:400}
+.tabla .sku{font-size:15px}
+.tabla .st{font-size:15px;color:var(--t2);white-space:nowrap}
+.tabla .st.low{color:var(--tinta);font-weight:600}
+.tabla .pr{font-weight:700;white-space:nowrap}
+.add{height:36px;padding:0 12px;border:1px solid var(--tinta);background:#fff;font-weight:600;font-size:14.5px;cursor:pointer;white-space:nowrap}
 .add:hover,.add.ok{background:var(--tinta);color:#fff}
-@media (max-width:560px){.add span{display:none}.add{width:38px;padding:0;justify-content:center}}
-.more{display:flex;justify-content:center;margin-top:32px}
-.empty{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:40px 24px;text-align:center;margin-top:20px}
-.empty h3{font-size:26px;margin:0 0 6px}.empty p{color:var(--texto-2);margin:0 0 18px}
+@media (max-width:700px){
+  .tabla thead{display:none}
+  .tabla tr{display:grid;grid-template-columns:64px 1fr auto;grid-template-areas:"img name name" "img sku pr" "img st add";gap:2px 12px;padding:12px 0;border-bottom:1px solid var(--linea)}
+  .tabla td{padding:0;border:0}
+  .tabla td:nth-child(1){grid-area:img}.tabla td:nth-child(2){grid-area:name}.tabla td:nth-child(3){grid-area:sku}.tabla td:nth-child(4){grid-area:st}.tabla td:nth-child(5){grid-area:pr;text-align:right}.tabla td:nth-child(6){grid-area:add;text-align:right}
+  .tabla .sku::before{content:"No. "}
+}
 
-/* faq */
-.faq{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(24px,4vw,64px);align-items:start}
-details{border-bottom:1px solid var(--linea)}
-details:first-child{border-top:2px solid var(--tinta)}
-summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font-weight:600;font-size:17px;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--tinta);border-bottom:2px solid var(--tinta);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
-details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-details p{font-family:var(--serif);font-size:17px;color:#363C43;margin:0 0 18px;max-width:60ch}
-@media (max-width:860px){.faq{grid-template-columns:1fr}}
+/* search results */
+.resultados{scroll-margin-top:96px;padding-bottom:40px;margin-bottom:8px;border-bottom:2px solid var(--tinta)}
+.resultados header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.resultados h2{font-size:clamp(24px,2.6vw,30px);margin:0}
+.resultados .meta{display:flex;gap:14px;color:var(--t2)}
+.linkbtn{background:none;border:0;padding:0;color:var(--rojo);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.empty{background:var(--gris);padding:28px;margin-top:8px}
+.empty h3{font-size:22px;margin:0 0 4px}.empty p{color:var(--t2);margin:0 0 14px}
 
-.cta{background:var(--tinta);color:#fff}
-.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:44px;padding-bottom:44px}
-.cta h2{font-size:clamp(26px,3vw,36px);margin:0;max-width:24ch;line-height:1.1}
-.cta p{color:#C2C8CF;margin:8px 0 0}
+/* order steps */
+.pedir{background:var(--gris);border-top:1px solid var(--linea)}
+.pedir .wrap{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,5vw,72px);padding-top:56px;padding-bottom:56px}
+.pedir h2{font-size:clamp(26px,3vw,36px);margin:0;line-height:1.15}
+.pedir p{color:var(--t2);margin:10px 0 18px}
+.pedir ol{margin:0;padding:0;list-style:none;counter-reset:s;border-top:2px solid var(--tinta)}
+.pedir li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;padding:14px 0;border-bottom:1px solid var(--linea)}
+.pedir li::before{content:counter(s);font-family:var(--serif);font-size:22px;font-weight:600}
+.pedir strong{display:block}
+.pedir span{color:var(--t2)}
+@media (max-width:760px){.pedir .wrap{grid-template-columns:1fr}}
 
-footer{padding:44px 0 26px;font-size:15px;color:var(--texto-2);border-top:1px solid var(--linea)}
-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-footer h4{color:var(--tinta);font-size:15.5px;margin:0 0 10px}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
-footer button.f{background:none;border:0;padding:0;color:inherit;cursor:pointer;text-align:left}
-footer button.f:hover,footer a:hover{color:var(--tinta);text-decoration:underline}
-footer .legal{border-top:1px solid var(--linea);margin-top:32px;padding-top:16px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media (max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer{border-top:1px solid var(--tinta);padding:28px 0;font-size:14.5px;color:var(--t2)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{width:64px}
 
-.fab{position:fixed;right:16px;bottom:16px;z-index:35;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:none;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:35;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:none;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25)}
 @media (max-width:560px){.fab{display:grid}}
 
 /* overlays */
-.scrim{position:fixed;inset:0;z-index:50;background:rgba(26,30,35,.5);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(30,35,40,.5);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
 .scrim.on{opacity:1;visibility:visible}
-.modal{position:fixed;z-index:60;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border-radius:12px;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s,visibility .3s}
+.modal{position:fixed;z-index:60;left:50%;top:50%;width:min(900px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border-top:3px solid var(--tinta);transform:translate(-50%,-47%);opacity:0;visibility:hidden;transition:transform .3s ease,opacity .2s,visibility .3s}
 .modal.on{transform:translate(-50%,-50%);opacity:1;visibility:visible}
 .modal .in{display:grid;grid-template-columns:1fr 1fr}
-.modal .big{background:var(--gris);aspect-ratio:1}
-.modal .big img{width:100%;height:100%;object-fit:contain;padding:10%;mix-blend-mode:multiply}
-.modal .info{padding:30px 26px;display:flex;flex-direction:column}
-.modal .kicker{color:var(--azul);font-weight:600;font-size:14.5px}
-.modal h2{font-size:clamp(26px,3vw,34px);line-height:1.08;margin:6px 0 12px}
-.modal .p{font-weight:700;font-size:32px;line-height:1}
-.modal .p small{font-size:14px;font-weight:500;color:var(--texto-2);margin-left:8px}
-.specs{margin:18px 0;border-top:1px solid var(--linea)}
-.specs div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--linea);font-size:15px}
-.specs dt{color:var(--texto-2)}.specs dd{margin:0;font-weight:600;text-align:right}
-.qty{display:inline-flex;align-items:center;border:1px solid var(--linea);border-radius:6px;height:46px}
-.qty button{width:40px;height:100%;border:0;background:none;font-size:20px;cursor:pointer}
+.modal .big{aspect-ratio:1;border-right:1px solid var(--linea)}
+.modal .big img{width:100%;height:100%;object-fit:contain;padding:10%}
+.modal .info{padding:30px 28px;display:flex;flex-direction:column}
+.modal .kicker{color:var(--t2);font-size:15px}
+.modal h2{font-size:clamp(24px,2.6vw,30px);line-height:1.15;margin:4px 0 12px}
+.modal .p{font-size:30px;font-weight:700;line-height:1}
+.modal .p small{font-size:14px;font-weight:400;color:var(--t2);margin-left:8px}
+.specs{margin:18px 0;border-top:1px solid var(--tinta)}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--linea);font-size:15.5px}
+.specs dt{color:var(--t2)}.specs dd{margin:0;font-weight:600;text-align:right}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--linea);height:44px}
+.qty button{width:40px;height:100%;border:0;background:none;font-size:19px;cursor:pointer}
 .qty output{min-width:26px;text-align:center;font-weight:700}
 .buy{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
 .buy .btn{flex:1}
-.x{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.95);cursor:pointer;display:grid;place-items:center;z-index:2;box-shadow:0 1px 4px rgba(0,0,0,.15)}
-@media (max-width:720px){.modal{top:auto;bottom:0;left:0;width:100%;max-height:92vh;border-radius:12px 12px 0 0;transform:translateY(30px)}.modal.on{transform:none}.modal .in{grid-template-columns:1fr}.modal .big{aspect-ratio:auto;height:250px}.modal .info{padding:20px 18px 24px}}
-.drawer{position:fixed;z-index:60;top:0;right:0;height:100%;width:min(440px,100vw);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.x{position:absolute;right:10px;top:10px;width:40px;height:40px;border:1px solid var(--linea);background:#fff;cursor:pointer;display:grid;place-items:center;z-index:2}
+@media (max-width:720px){.modal{top:auto;bottom:0;left:0;width:100%;max-height:92vh;transform:translateY(30px)}.modal.on{transform:none}.modal .in{grid-template-columns:1fr}.modal .big{aspect-ratio:auto;height:240px;border-right:0;border-bottom:1px solid var(--linea)}.modal .info{padding:20px 18px 24px}}
+.drawer{position:fixed;z-index:60;top:0;right:0;height:100%;width:min(440px,100vw);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;visibility:hidden;border-left:1px solid var(--tinta)}
 .drawer.on{transform:none;visibility:visible}
-.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--linea)}
-.drawer .dh h2{font-size:26px;margin:0}
-.drawer .x{position:static;box-shadow:none;background:var(--gris)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--tinta)}
+.drawer .dh h2{font-size:24px;margin:0}
+.drawer .x{position:static}
 .lines{flex:1;overflow:auto;padding:4px 20px}
-.line{display:grid;grid-template-columns:68px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:center}
-.line .t{width:68px;height:68px;background:var(--gris);border-radius:6px}
-.line .t img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
-.line h3{font-family:var(--sans);font-size:15px;font-weight:600;margin:0;line-height:1.3;letter-spacing:0}
-.line small{color:var(--texto-2);display:block}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:center}
+.line .t{width:64px;height:64px;border:1px solid var(--linea)}
+.line .t img{width:100%;height:100%;object-fit:contain;padding:6%}
+.line h3{font-family:var(--sans);font-size:15.5px;font-weight:600;margin:0;line-height:1.3}
+.line small{color:var(--t2);display:block}
 .line .qty{height:34px;margin-top:6px}.line .qty button{width:32px}
-.line .r{text-align:right}.line .r strong{display:block;font-size:17px}
-.line .del{background:none;border:0;color:var(--texto-2);font-size:14px;cursor:pointer;text-decoration:underline;padding:4px 0}
-.dfoot{background:var(--gris);padding:18px 20px 22px}
-.tot{display:flex;justify-content:space-between;font-size:15.5px;padding:3px 0}
-.tot.big{font-weight:700;font-size:18px;padding-top:8px}
-.tot.big span:last-child{font-size:24px}
-.dfoot .btn{width:100%;margin-top:14px;height:52px}
-.dfoot p{font-size:14px;color:var(--texto-2);margin:10px 0 0}
-.cart-empty{padding:52px 8px;text-align:center;color:var(--texto-2)}
-.cart-empty strong{display:block;color:var(--tinta);font-family:var(--serif);font-size:24px;margin-bottom:6px}
-.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,20px);opacity:0;visibility:hidden;background:var(--tinta);color:#fff;border-radius:8px;padding:12px 12px 12px 18px;display:flex;gap:16px;align-items:center;box-shadow:0 14px 40px rgba(0,0,0,.3);transition:all .25s;max-width:calc(100vw - 32px);font-size:15.5px}
+.line .r{text-align:right}.line .r strong{display:block;font-weight:700}
+.line .del{background:none;border:0;color:var(--t2);font-size:14px;cursor:pointer;text-decoration:underline;padding:4px 0}
+.dfoot{background:var(--gris);border-top:1px solid var(--linea);padding:18px 20px 22px}
+.tot{display:flex;justify-content:space-between;font-size:16px;padding:3px 0}
+.tot.big{font-weight:700;font-size:19px;padding-top:8px}
+.dfoot .btn{width:100%;margin-top:14px;height:50px}
+.dfoot p{font-size:14.5px;color:var(--t2);margin:10px 0 0}
+.cart-empty{padding:52px 8px;text-align:center;color:var(--t2)}
+.cart-empty strong{display:block;color:var(--tinta);font-family:var(--serif);font-size:22px;margin-bottom:6px}
+.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,20px);opacity:0;visibility:hidden;background:var(--tinta);color:#fff;padding:12px 12px 12px 18px;display:flex;gap:16px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .25s;max-width:calc(100vw - 32px);font-size:15.5px}
 .toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
 .toast span{flex:1}
-.toast button{background:#fff;color:var(--tinta);border:0;border-radius:6px;height:36px;padding:0 12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.toast button{background:#fff;color:var(--tinta);border:0;height:36px;padding:0 12px;font-weight:600;cursor:pointer;white-space:nowrap}
 @media (max-width:560px){.toast{bottom:84px;width:calc(100vw - 32px)}}
 </style>
 </head>
@@ -238,12 +203,15 @@ footer .legal{border-top:1px solid var(--linea);margin-top:32px;padding-top:16px
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="Hondu Truck, inicio"><img src="logo.png" alt="" width="56" height="33">Hondu Truck</a>
-    <nav class="links" aria-label="Secciones"><a href="#guia">Guía de piezas</a><a href="#tapas">Tapas de tuerca</a><a href="#catalogo">Catálogo</a><a href="#preguntas">Preguntas</a></nav>
-    <div class="top-actions">
-      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
-      <button class="btn btn-line" type="button" data-open-cart aria-label="Abrir pedido">Pedido <span class="cart-n" data-cart-n hidden>0</span></button>
-    </div>
+    <a class="brand" href="#" aria-label="Hondu Truck, inicio"><img src="logo.png" alt="" width="54" height="32"><span>Hondu Truck<small>Catálogo de productos</small></span></a>
+    <form class="hsearch" role="search" data-search>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr" for="q">Buscar en el catálogo</label>
+      <input id="q" type="search" placeholder="Buscar por nombre o número de parte" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Buscar</button>
+    </form>
+    <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Cotizar</a>
+    <button class="btn btn-line" type="button" data-open-cart aria-label="Ver pedido">Pedido <span class="cart-n" data-cart-n hidden>0</span></button>
   </div>
 </header>
 
@@ -251,161 +219,56 @@ footer .legal{border-top:1px solid var(--linea);margin-top:32px;padding-top:16px
 <section class="intro" aria-labelledby="h1">
   <div class="wrap">
     <div>
-      <h1 id="h1">Encuentra la pieza correcta para tu camión</h1>
-      <p>Toca una zona del camión y te explicamos qué pieza va ahí, qué revisar antes de comprarla y cuánto cuesta.</p>
-      <form class="search" role="search" data-search>
-        <label><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Buscar pieza</span>
-        <input type="search" placeholder="¿Ya sabes qué buscas? Nombre o número de parte" autocomplete="off" enterkeyhint="search"></label>
-        <button class="btn btn-ink" type="submit">Buscar</button>
-      </form>
+      <h1 id="h1">Catálogo de accesorios y repuestos para camión</h1>
+      <p>Organizado por categoría. En cada una explicamos qué es la pieza y qué revisar antes de comprarla, con número de parte, existencia y precio de cada producto.</p>
     </div>
-    <ul class="datos" aria-label="Datos de compra">
-      <li><span>Piezas en existencia</span><strong><span data-total-count>52</span> con número de parte</strong></li>
-      <li><span>Envío</span><strong>24–48 h a todo Honduras</strong></li>
-      <li><span>Garantía</span><strong>6 meses por defecto de fábrica</strong></li>
-      <li><span>Cotización</span><strong>El mismo día por WhatsApp</strong></li>
-    </ul>
+    <dl class="ficha" aria-label="Condiciones de venta">
+      <div><dt>Productos</dt><dd><span data-total-count>52</span> en existencia, en 9 categorías</dd></div>
+      <div><dt>Precios</dt><dd>En lempiras, ISV incluido</dd></div>
+      <div><dt>Envío</dt><dd>24–48 h a todo Honduras</dd></div>
+      <div><dt>Garantía</dt><dd>6 meses por defecto de fábrica</dd></div>
+      <div><dt>Horario</dt><dd>Lunes a sábado, 8:00 a. m. a 5:00 p. m.</dd></div>
+    </dl>
   </div>
 </section>
 
-<section class="mapa" id="guia" aria-labelledby="guia-t">
+<div class="cuerpo">
   <div class="wrap">
-    <div class="mapa-head">
-      <div><h2 id="guia-t">Guía de piezas por zona</h2><p>Elige un punto del camión o una zona de la lista.</p></div>
-    </div>
-    <div class="mapa-grid">
-      <div class="lienzo">
-        <div class="truck hint" data-truck>
-          <svg viewBox="270 0 710 420" aria-hidden="true" fill="none" stroke="#1A1E23" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-            <line x1="20" y1="384" x2="980" y2="384" stroke="#C3C9D0" stroke-width="2"/>
-            <!-- frame -->
-            <rect x="296" y="284" width="604" height="20" fill="#2B3138" stroke="none"/>
-            <rect x="350" y="270" width="100" height="14" rx="3" fill="#C9D0D7"/>
-            <!-- exhaust stack -->
-            <rect x="536" y="30" width="14" height="254" rx="5" fill="#E3E7EB"/>
-            <!-- cab -->
-            <path d="M560 284 V98 Q560 82 576 82 H700 Q714 82 718 96 L744 176 V284 Z" fill="#fff"/>
-            <path d="M610 104 H676 V172 H610 Z" fill="#DCE6EF"/>
-            <path d="M688 104 H704 Q711 104 713 111 L732 172 H688 Z" fill="#DCE6EF"/>
-            <path d="M598 98 V268 H742" stroke-width="2"/>
-            <!-- steering wheel + column seen through windshield -->
-            <ellipse cx="704" cy="148" rx="6" ry="17" stroke-width="4"/>
-            <line x1="707" y1="160" x2="722" y2="176" stroke-width="3"/>
-            <!-- gear lever seen through door window -->
-            <line x1="652" y1="172" x2="660" y2="134" stroke-width="3.5"/>
-            <circle cx="661" cy="129" r="7" fill="#1A1E23" stroke="none"/>
-            <!-- roof marker lights -->
-            <rect x="634" y="74" width="12" height="7" rx="2" fill="#F2A900" stroke="none"/>
-            <rect x="654" y="74" width="12" height="7" rx="2" fill="#F2A900" stroke="none"/>
-            <rect x="674" y="74" width="12" height="7" rx="2" fill="#F2A900" stroke="none"/>
-            <!-- hood + grille + bumper -->
-            <path d="M744 176 L888 190 Q904 192 907 207 L916 284 H744 Z" fill="#fff"/>
-            <rect x="905" y="206" width="14" height="76" rx="2" fill="#C9D0D7"/>
-            <rect x="894" y="234" width="16" height="10" rx="2" fill="#F2B33D" stroke="none"/>
-            <rect x="878" y="284" width="64" height="22" rx="4" fill="#C9D0D7"/>
-            <rect x="926" y="290" width="30" height="17" rx="2" fill="#fff" stroke-width="3"/>
-            <!-- mirror + antenna -->
-            <path d="M742 150 L758 132" stroke-width="3"/>
-            <rect x="756" y="106" width="10" height="46" rx="3" fill="#2B3138" stroke="none"/>
-            <path d="M763 106 L792 26" stroke-width="3"/>
-            <circle cx="792" cy="24" r="4" fill="#C8161D" stroke="none"/>
-            <!-- fuel tank -->
-            <rect x="600" y="290" width="124" height="46" rx="22" fill="#E3E7EB"/>
-            <circle cx="702" cy="292" r="7" fill="#C9D0D7" stroke-width="3"/>
-            <!-- steps -->
-            <path d="M574 300 h18 M574 318 h18" stroke-width="3"/>
-            <!-- fenders -->
-            <path d="M318 300 Q330 262 382 262 H488 Q540 262 552 300" stroke-width="6"/>
-            <path d="M738 292 Q748 258 800 256 Q852 258 864 292" stroke-width="6"/>
-            <!-- wheels -->
-            <g fill="#2B3138" stroke="none"><circle cx="382" cy="330" r="52"/><circle cx="490" cy="330" r="52"/><circle cx="800" cy="330" r="52"/></g>
-            <g fill="#DDE2E7" stroke="#1A1E23" stroke-width="3"><circle cx="382" cy="330" r="30"/><circle cx="490" cy="330" r="30"/><circle cx="800" cy="330" r="30"/></g>
-            <g fill="#fff" stroke="#1A1E23" stroke-width="3"><circle cx="382" cy="330" r="11"/><circle cx="490" cy="330" r="11"/><circle cx="800" cy="330" r="11"/></g>
-            <g fill="#1A1E23" stroke="none">
-              <circle cx="800" cy="311" r="3"/><circle cx="818" cy="324" r="3"/><circle cx="811" cy="345" r="3"/><circle cx="789" cy="345" r="3"/><circle cx="782" cy="324" r="3"/>
-            </g>
-            <!-- mud flap + rear stop -->
-            <rect x="300" y="300" width="12" height="76" rx="2" fill="#C8161D" stroke="none"/>
-            <rect x="296" y="286" width="10" height="12" rx="2" fill="#C8161D" stroke="none"/>
-          </svg>
-          <div data-hots></div>
-        </div>
-        <div class="zonas" data-zonas role="toolbar" aria-label="Zonas del camión"></div>
-      </div>
-      <article class="ficha" aria-live="polite" data-ficha></article>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="tapas" aria-labelledby="tapas-t">
-  <div class="wrap comp">
+    <nav class="indice" aria-label="Índice del catálogo">
+      <h2>Índice</h2>
+      <ol data-indice></ol>
+      <div class="ayuda"><p>¿No encuentra la pieza? Envíe el número de parte o una foto.</p><a class="btn btn-wa" data-wa data-wa-msg="Hola Hondu Truck, les envío el número de parte / foto de la pieza que necesito: " href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a></div>
+    </nav>
     <div>
-      <h2 class="h2" id="tapas-t">Tapas de tuerca de 33 mm, lado a lado</h2>
-      <p class="lead">Tenemos cinco modelos para tuerca de 33 mm. Compara forma, largo y tipo de sujeción antes de elegir.</p>
-      <div class="notas">
-        <div class="nota"><strong>De rosca</strong><span>Se enrosca sobre la tuerca.</span></div>
-        <div class="nota"><strong>De presión</strong><span>Entra a presión sobre la tuerca, sin enroscar.</span></div>
-        <div class="nota"><strong>¿Tu tuerca no es de 33 mm?</strong><span>Mándanos una foto o el número de parte y te decimos cuál te sirve.</span></div>
-      </div>
-    </div>
-    <div class="tabla-wrap">
-      <table>
-        <thead><tr><th></th><th>Forma</th><th>Largo</th><th>Sujeción</th><th>No. de parte</th><th style="text-align:right">Precio</th><th></th></tr></thead>
-        <tbody data-comp></tbody>
-      </table>
+      <section class="resultados" id="catalogo" aria-labelledby="res-t" data-res hidden>
+        <header><h2 id="res-t" data-heading data-default="Resultados">Resultados</h2><div class="meta"><span data-count></span><button class="linkbtn" type="button" data-clear>Quitar búsqueda</button></div></header>
+        <table class="tabla"><thead><tr><th></th><th>Producto</th><th>No. de parte</th><th>Existencia</th><th class="n">Precio</th><th></th></tr></thead><tbody data-grid aria-live="polite"></tbody></table>
+        <div class="empty" data-empty hidden><h3>No encontramos ese producto</h3><p>Envíenos el número de parte o una foto y le decimos si lo conseguimos.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a></div>
+      </section>
+      <div data-caps></div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="sec" id="catalogo" aria-labelledby="cat-t">
+<section class="pedir" aria-labelledby="ped-t">
   <div class="wrap">
-    <div class="cat-head">
-      <div><h2 class="h2" id="cat-t" data-heading data-default="Catálogo completo">Catálogo completo</h2><div class="meta"><span data-count></span><button class="linkbtn" type="button" data-clear hidden>Quitar búsqueda</button></div></div>
-      <label class="sort">Ordenar<select data-sort><option value="rel">Destacados</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
-    </div>
-    <div class="chips" data-chips role="toolbar" aria-label="Filtrar por categoría"></div>
-    <div class="grid" data-grid aria-live="polite"></div>
-    <div class="empty" data-empty hidden><h3>Esa pieza no está en el catálogo</h3><p>Envíanos el número de parte o una foto y te decimos si la conseguimos.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a></div>
-    <div class="more"><button class="btn btn-line" type="button" data-more hidden>Mostrar más</button></div>
+    <div><h2 id="ped-t">Cómo hacer un pedido</h2><p>Sin registro y sin pago en línea.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+    <ol>
+      <li><div><strong>Agregue los productos a su pedido</strong><span>O envíenos directamente los números de parte.</span></div></li>
+      <li><div><strong>Envíe el pedido por WhatsApp</strong><span>Le confirmamos existencia, precio final y forma de pago.</span></div></li>
+      <li><div><strong>Reciba en 24 a 48 horas</strong><span>Enviamos a todo Honduras, con salidas diarias a San Pedro Sula, Tegucigalpa, Choloma y Puerto Cortés. El costo de envío se confirma con el pedido.</span></div></li>
+    </ol>
   </div>
-</section>
-
-<section class="sec" id="preguntas" aria-labelledby="faq-t">
-  <div class="wrap faq">
-    <div><h2 class="h2" id="faq-t">Preguntas frecuentes</h2><p class="lead">Si tu duda no está aquí, escríbenos por WhatsApp.</p></div>
-    <div>
-      <details open><summary>¿Cómo hago un pedido?</summary><p>Agrega las piezas a tu pedido y envíalo por WhatsApp, o escríbenos directamente con los números de parte. Te confirmamos existencia, precio final y forma de pago.</p></details>
-      <details><summary>¿Cuánto tarda el envío?</summary><p>De 24 a 48 horas a todo Honduras, con salidas diarias a San Pedro Sula, Tegucigalpa, Choloma y Puerto Cortés. El costo de envío se confirma junto con tu pedido.</p></details>
-      <details><summary>¿Qué garantía tienen las piezas?</summary><p>Seis meses por defecto de fábrica.</p></details>
-      <details><summary>¿Los precios incluyen impuesto?</summary><p>Sí. Todos los precios están en lempiras e incluyen ISV.</p></details>
-      <details><summary>No sé el número de parte, ¿qué hago?</summary><p>Mándanos una foto de la pieza que necesitas cambiar y te ayudamos a identificarla.</p></details>
-      <details><summary>¿Cuál es el horario de atención?</summary><p>Lunes a sábado, de 8:00 a. m. a 5:00 p. m.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="cta" aria-label="Contacto">
-  <div class="wrap"><div><h2>¿Prefieres que te ayudemos a elegir?</h2><p>Mándanos una foto de la pieza por WhatsApp y te cotizamos el mismo día.</p></div>
-  <a class="btn btn-wa" data-wa data-wa-msg="Hola Hondu Truck, necesito ayuda para elegir una pieza: " href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="cols">
-      <div><img src="logo.png" alt="Hondu Truck" width="96" loading="lazy" style="margin-bottom:8px"><p style="margin:0;max-width:30ch">Accesorios y repuestos para camiones de carga en Honduras.</p></div>
-      <div><h4>Contacto</h4><ul><li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp 9775-7535</a></li><li>Lunes a sábado</li><li>8:00 a. m. a 5:00 p. m.</li></ul></div>
-      <div><h4>Categorías</h4><ul data-foot-cats></ul></div>
-    </div>
-    <div class="legal"><span>© <span data-year>2026</span> Hondu Truck. Precios en lempiras, ISV incluido.</span><span>Garantía de 6 meses por defecto de fábrica.</span></div>
-  </div>
-</footer>
+<footer><div class="wrap"><img src="logo.png" alt="Hondu Truck" loading="lazy"><span>© <span data-year>2026</span> Hondu Truck. WhatsApp <a data-wa href="#" target="_blank" rel="noopener">9775-7535</a>. Precios en lempiras, ISV incluido.</span></div></footer>
 
 <a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg></a>
 
 <div class="scrim" data-scrim></div>
 <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-name" data-modal>
-  <button class="x" type="button" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="x" type="button" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <div class="in">
     <div class="big"><img data-m-img alt=""></div>
     <div class="info">
@@ -415,77 +278,81 @@ footer .legal{border-top:1px solid var(--linea);margin-top:32px;padding-top:16px
       <dl class="specs" data-m-specs></dl>
       <div class="buy">
         <div class="qty"><button type="button" data-m-dec aria-label="Quitar uno">−</button><output data-m-qty>1</output><button type="button" data-m-inc aria-label="Agregar uno">+</button></div>
-        <button class="btn btn-ink" type="button" data-m-add>Agregar al pedido</button>
-        <a class="btn btn-wa" data-m-wa href="#" target="_blank" rel="noopener" style="flex-basis:100%">Preguntar por esta pieza</a>
+        <button class="btn btn-dark" type="button" data-m-add>Agregar al pedido</button>
+        <a class="btn btn-wa" data-m-wa href="#" target="_blank" rel="noopener" style="flex-basis:100%">Consultar por este producto</a>
       </div>
     </div>
   </div>
 </div>
 <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="c-t" data-drawer>
-  <div class="dh"><h2 id="c-t">Tu pedido</h2><button class="x" type="button" data-close aria-label="Cerrar pedido"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="dh"><h2 id="c-t">Su pedido</h2><button class="x" type="button" data-close aria-label="Cerrar pedido"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="lines" data-lines></div>
   <div class="dfoot" data-cart-foot>
     <div class="tot"><span>Subtotal</span><span data-sub></span></div>
     <div class="tot"><span>Envío</span><span>Se confirma por WhatsApp</span></div>
     <div class="tot big"><span>Total</span><span data-total></span></div>
     <a class="btn btn-wa" data-order href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
-    <p>Te respondemos para confirmar existencia, forma de pago y envío.</p>
+    <p>Le confirmaremos existencia, forma de pago y envío.</p>
   </div>
 </aside>
 <div class="toast" role="status" data-toast><span data-toast-t></span><button type="button" data-open-cart>Ver pedido</button></div>
 
 <script>
-/* Explicaciones por categoría: qué es y qué revisar. Solo datos que salen del catálogo. */
+/* Explicación por categoría: solo información que se desprende del catálogo. */
 var GUIA = {
-  "TAPAS":{zona:"Ruedas",x:800,y:330,que:"Cubren las tuercas de la rueda. Protegen la rosca del polvo, el agua y el óxido, y le dan un acabado parejo a la llanta.",
-    check:["La medida de tu tuerca: varias de nuestras tapas son para 33 mm.","Cómo se sujeta: de rosca (se enrosca) o de presión (entra a presión).","El largo y la forma: 3.5\" o 5\"; octagonal, hexagonal o cilindro."]},
-  "LODERAS":{zona:"Detrás de las llantas",x:306,y:342,que:"Van detrás de las llantas y detienen el lodo y las piedras que levantan al rodar.",
-    check:["La medida: todas las de este catálogo son de 24 x 30.","El color: roja, rojo escarlata, blanca, negra o anaranjada."]},
-  "LUCES":{zona:"Luces de posición y stop",x:640,y:72,que:"Stops y vías LED en ámbar y rojo, y aros metálicos para montar el stop.",
-    check:["El voltaje de tu camión: varias de estas luces son de 12 V.","El tamaño: stop de 4\" o vía de 3\".","El color que necesitas en cada posición."]},
-  "ANTENAS":{zona:"Espejo y techo",x:792,y:36,que:"Antenas tipo látigo para radio, con sus bases y resortes de montaje.",
-    check:["El tipo de base: de 2 o de 4 tornillos.","El largo: los kits de antena espiral son de 100 cm."]},
-  "PORTA PLACAS":{zona:"Placa",x:941,y:298,que:"Porta placas y marcos para la placa del camión.",
-    check:["El estilo: sencillo, A/A o marco tipo diamante."]},
-  "MANOS LIBRES":{zona:"Timón",x:708,y:150,que:"Perilla que se monta en el timón para girarlo con una mano al maniobrar.",
+  "TAPAS":{que:"Cubren las tuercas de la rueda. Protegen la rosca del polvo, el agua y el óxido, y dan un acabado uniforme a la llanta.",
+    check:["La medida de la tuerca: varias de estas tapas son para 33 mm.","La sujeción: de rosca (se enrosca sobre la tuerca) o de presión (entra a presión).","El largo y la forma: 3.5\" o 5\"; octagonal, hexagonal o cilindro."]},
+  "CROMADOS":{que:"Piezas de acabado para la cabina y el exterior: tapón para el tanque de diésel, manesillas, copas y spinners.",
+    check:["El lado de instalación: algunas manesillas son derecha o izquierda.","El número de parte, para confirmar que corresponde a su modelo."]},
+  "MANOS LIBRES":{que:"Perilla que se monta en el timón para girarlo con una mano al maniobrar.",
     check:["El estilo: madera, colores, tambor o tipo revólver.","Que la abrazadera quede bien apretada al timón antes de manejar."]},
-  "PALANCAS":{zona:"Palanca de cambios",x:656,y:130,que:"Perillas, bases, uñas y extensiones para la palanca de cambios.",
-    check:["El largo de la extensión: 6\", 9\" o 12\".","El número de parte de tu pieza actual, si quieres el mismo modelo."]},
-  "CROMADOS":{zona:"Cabina y tanque",x:702,y:292,que:"Piezas de acabado para la cabina y el exterior: tapón para el tanque de diésel, manesillas, copas y spinners.",
-    check:["Si la pieza es para un lado: algunas manesillas son derecha o izquierda.","El número de parte, para confirmar que corresponde a tu modelo."]},
-  "PULIDO":{zona:"Mantenimiento",que:"Pastas y piedras para pulir y sacar brillo al metal.",
+  "PALANCAS":{que:"Perillas, bases, uñas y extensiones para la palanca de cambios.",
+    check:["El largo de la extensión: 6\", 9\" o 12\".","El número de parte de la pieza actual, si busca el mismo modelo."]},
+  "LODERAS":{que:"Van detrás de las llantas y detienen el lodo y las piedras que estas levantan al rodar.",
+    check:["La medida: todas las de esta categoría son de 24 x 30.","El color: roja, rojo escarlata, blanca, negra o anaranjada."]},
+  "LUCES":{que:"Stops y vías LED en ámbar y rojo, y aros metálicos para montar el stop.",
+    check:["El voltaje del camión: varias de estas luces son de 12 V.","El tamaño: stop de 4\" o vía de 3\".","El color que corresponde a cada posición."]},
+  "ANTENAS":{que:"Antenas tipo látigo para radio, con sus bases y resortes de montaje.",
+    check:["El tipo de base: de 2 o de 4 tornillos.","El largo: los kits de antena espiral son de 100 cm."]},
+  "PORTA PLACAS":{que:"Porta placas y marcos para la placa del camión.",
+    check:["El estilo: sencillo, A/A o marco tipo diamante."]},
+  "PULIDO":{que:"Pastas y piedras para pulir y sacar brillo al metal.",
     check:["La presentación: pasta de 350 g o piedra para pulir."]}
 };
-var ORDER=["TAPAS","LODERAS","MANOS LIBRES","PALANCAS","CROMADOS","LUCES","ANTENAS","PORTA PLACAS","PULIDO"];
-
+function fila(p,h,conCat){
+  var low=p.stock<=2;
+  return '<tr><td><button class="th" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy" width="550" height="550"></button></td>'+
+    '<td><span class="nm" data-open="'+p.id+'" role="button" tabindex="0">'+h.esc(p.name)+'</span>'+(conCat?'<span class="c">'+p.cat+'</span>':'')+'</td>'+
+    '<td class="sku">'+h.esc(p.sku)+'</td>'+
+    '<td class="st'+(low?' low':'')+'">'+(p.stock===1?'1 unidad':p.stock+' unidades')+'</td>'+
+    '<td class="pr n">'+h.money(p.price)+'</td>'+
+    '<td class="n"><button class="add" type="button" data-add="'+p.id+'" aria-label="Agregar '+h.esc(p.name)+'">Agregar</button></td></tr>';
+}
 window.HT = {
-  offset: 80,
-  card: function(p,h){var s=h.stock(p);
-    return '<article class="card"><button class="ph" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy" width="550" height="550">'+(s?'<span class="low">'+s+'</span>':'')+'</button>'+
-      '<h3 data-open="'+p.id+'">'+h.esc(p.name)+'</h3><div class="sku">No. de parte '+h.esc(p.sku)+'</div>'+
-      '<div class="row"><span class="price">'+h.money(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'" aria-label="Agregar '+h.esc(p.name)+'"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Agregar</span></button></div></article>';},
+  page: 60, offset: (window.innerWidth<=960?170:96),
+  cartEmpty: '<div class="cart-empty"><strong>Su pedido está vacío</strong>Agregue productos del catálogo y envíenos el pedido por WhatsApp.</div>',
+  card: function(p,h){return fila(p,h,true)},
+  afterGrid: function(S){
+    var r=document.querySelector("[data-res]"); if(r) r.hidden=!S.q;
+  },
   ready: function(core){
-    var h=core.h, cats={}; core.cats.forEach(function(c){cats[c.k]=c});
-    var hots=document.querySelector("[data-hots]"), zonas=document.querySelector("[data-zonas]"), ficha=document.querySelector("[data-ficha]");
-    hots.innerHTML=ORDER.filter(function(k){return GUIA[k].x}).map(function(k){var g=GUIA[k];
-      return '<button class="hot" type="button" data-zona="'+k+'" style="left:'+((g.x-270)/7.1)+'%;top:'+(g.y/4.2)+'%" aria-label="'+cats[k].n+' ('+g.zona+')"><span class="tip">'+cats[k].n+'</span></button>'}).join("");
-    zonas.innerHTML=ORDER.map(function(k){return '<button type="button" data-zona="'+k+'">'+cats[k].n+'</button>'}).join("");
-    function show(k){
-      var g=GUIA[k], list=core.all.filter(function(p){return p.k===k});
-      ficha.innerHTML='<div class="zona">'+g.zona+'</div><h3>'+cats[k].n+'</h3><p class="que">'+g.que+'</p>'+
-        '<h4>Antes de comprar, revisa:</h4><ul class="check">'+g.check.map(function(c){return '<li>'+c+'</li>'}).join("")+'</ul>'+
-        '<div class="minis">'+list.slice(0,4).map(function(p){return '<button class="mini" type="button" data-open="'+p.id+'"><span class="i"><img src="'+p.img+'" alt="" loading="lazy"></span><b>'+h.money(p.price)+'</b><small>'+h.esc(p.name)+'</small></button>'}).join("")+'</div>'+
-        '<button class="btn btn-ink" type="button" data-cat="'+k+'">Ver '+(list.length===1?'la pieza':'las '+list.length+' piezas')+' de '+cats[k].n.toLowerCase()+'</button>';
-      document.querySelectorAll("[data-zona]").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-zona")===k))});
+    var h=core.h, caps=document.querySelector("[data-caps]");
+    caps.innerHTML=core.cats.map(function(c,i){
+      var g=GUIA[c.k], list=core.all.filter(function(p){return p.k===c.k});
+      return '<section class="cap" id="cap-'+(i+1)+'" aria-labelledby="cap-t-'+(i+1)+'"><header><span>'+(i+1)+'</span><h2 id="cap-t-'+(i+1)+'">'+c.n+'</h2></header>'+
+        '<p class="que">'+g.que+'</p><div class="revisar"><h3>Antes de comprar, revise</h3><ul>'+g.check.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></div>'+
+        '<table class="tabla"><thead><tr><th></th><th>Producto</th><th>No. de parte</th><th>Existencia</th><th class="n">Precio</th><th></th></tr></thead><tbody>'+list.map(function(p){return fila(p,h,false)}).join("")+'</tbody></table></section>';
+    }).join("");
+    var idx=document.querySelector("[data-indice]");
+    idx.innerHTML=core.cats.map(function(c,i){return '<li><a href="#cap-'+(i+1)+'"><span>'+(i+1)+'</span><span>'+c.n+'</span><small>'+core.count[c.k]+'</small></a></li>'}).join("");
+    var links=idx.querySelectorAll("a");
+    function mark(id){links.forEach(function(a){var on=a.getAttribute("href")==="#"+id;a.setAttribute("aria-current",String(on));if(on&&window.innerWidth<=960)a.scrollIntoView({block:"nearest",inline:"center"})})}
+    if("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)mark(e.target.id)})},{rootMargin:"-30% 0px -60% 0px"});
+      document.querySelectorAll(".cap").forEach(function(s){io.observe(s)});
     }
-    document.addEventListener("click",function(e){var b=e.target.closest("[data-zona]");if(b){show(b.getAttribute("data-zona"));document.querySelector("[data-truck]").classList.remove("hint");
-      if(window.innerWidth<960&&b.classList.contains("hot")) ficha.scrollIntoView({behavior:"smooth",block:"nearest"});}});
-    show("TAPAS");
-
-    // comparison table for 33 mm lug nut covers
-    var rows=[[1,"Octagonal",'5"',"Rosca"],[2,"Octagonal",'5"',"Presión"],[3,"Hexagonal",'3.5"',null],[4,"Cilindro",'3.5"',"Rosca"],[5,"Cilindro",'3.5"',"Presión"]];
-    document.querySelector("[data-comp]").innerHTML=rows.map(function(r){var p=core.byId(r[0]);
-      return '<tr><td><button class="th" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy"></button></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+(r[3]?'<span class="pill'+(r[3]==="Rosca"?' r':'')+'">'+r[3]+'</span>':'<span style="color:var(--texto-2)">Consultar</span>')+'</td><td>'+h.esc(p.sku)+'</td><td class="p">'+h.money(p.price)+'</td><td><button class="add-s" type="button" data-add="'+p.id+'">Agregar</button></td></tr>'}).join("");
+    mark("cap-1");
+    document.addEventListener("keydown",function(e){var t=e.target;if(t.classList&&t.classList.contains("nm")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();core.open(+t.getAttribute("data-open"))}});
   }
 };
 </script>
