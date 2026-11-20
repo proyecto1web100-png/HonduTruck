@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hondu Truck · Cromo y accesorios para camión</title>
+<meta name="description" content="Cromados, tapas de tuerca, manos libres, loderas, luces LED y antenas para camión. Envíos a todo Honduras en 24–48 h. Cotiza por WhatsApp.">
+<meta name="theme-color" content="#10161D">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;600;700;800&family=Saira:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --diesel:#10161D; --acero:#18212B; --acero-2:#223040; --linea:#2C3A4A;
+  --cromo:#B9C3CE; --blanco:#F3F5F7; --rojo:#D41F27; --rojo-2:#B0161D; --ambar:#F5A524; --wa:#1FA855;
+  --disp:"Saira Semi Condensed","Arial Narrow",sans-serif; --sans:"Saira",system-ui,sans-serif;
+  --wrap:1280px; --pad:clamp(16px,4vw,44px);
+  /* the display-case light: a lit plate that fades to steel at the edges */
+  --spot:radial-gradient(120% 95% at 50% 30%,#FFFFFF 0%,#EEF1F4 38%,#C9D0D7 72%,#9AA4AF 100%);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--diesel);color:var(--blanco);font-family:var(--sans);font-size:17px;line-height:1.55;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.top.is-scrolled{background:rgba(16,22,29,.94);backdrop-filter:blur(12px);border-bottom-color:var(--linea)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:58px}
+.brand span{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:.04em}
+nav.links{display:flex;gap:26px;font-weight:500;font-size:16px}
+nav.links a{text-decoration:none;color:var(--cromo)}
+nav.links a:hover{color:#fff}
+.top-actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:48px;padding:0 20px;border-radius:4px;border:1px solid transparent;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s,color .15s}
+.btn-red{background:var(--rojo);color:#fff}.btn-red:hover{background:var(--rojo-2)}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#178a45}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#fff;background:rgba(16,22,29,.35)}.btn-ghost:hover{border-color:#fff}
+.cart-n{min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--rojo);color:#fff;font-size:13px;display:inline-grid;place-items:center;font-weight:600}
+@keyframes bump{40%{transform:scale(1.3)}} .cart-n.bump{animation:bump .4s ease}
+@media (max-width:900px){nav.links{display:none}}
+@media (max-width:600px){.top .btn-wa{display:none}.brand span{font-size:20px}.brand img{width:48px}}
+
+/* hero */
+.hero{position:relative;min-height:min(100vh,860px);display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url(img/fotos/luces.jpg) center 62%/cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,22,29,.72) 0%,rgba(16,22,29,.25) 30%,rgba(16,22,29,.55) 62%,var(--diesel) 100%)}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;padding-top:140px;padding-bottom:64px}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(48px,7vw,104px);line-height:.9;margin:0;letter-spacing:-.01em}
+.hero p{font-size:clamp(17px,1.5vw,19px);color:#D3DAE1;max-width:44ch;margin:22px 0 28px}
+.search{display:flex;max-width:600px;border:1px solid rgba(255,255,255,.3);background:rgba(16,22,29,.6);backdrop-filter:blur(6px);border-radius:4px}
+.search label{flex:1;display:flex;align-items:center;gap:10px;padding-left:16px;color:var(--cromo);min-width:0}
+.search input{flex:1;min-width:0;height:58px;border:0;background:transparent;outline:none;color:#fff;font:inherit;font-size:17px}
+.search input::placeholder{color:#8C99A6}
+.search .btn{height:58px;border-radius:0 3px 3px 0;padding:0 28px}
+.quick{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px;font-size:15px;color:var(--cromo)}
+.quick button{background:none;border:0;padding:0;color:#fff;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px}
+.quick button:hover{text-decoration-color:var(--ambar)}
+
+/* the showcase plate */
+.vitrina{justify-self:end;width:min(100%,420px);background:var(--acero);border:1px solid var(--linea);border-radius:6px;overflow:hidden}
+.vitrina .plate{aspect-ratio:1/.86;background:var(--spot);position:relative;cursor:pointer;border:0;padding:0;width:100%;display:block}
+.vitrina .plate img{width:100%;height:100%;object-fit:contain;padding:9% 16%;mix-blend-mode:multiply;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.vitrina .plate img.out{opacity:0;transform:scale(.96)}
+.vitrina .meta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px}
+.vitrina .meta small{display:block;color:var(--cromo);font-size:14px}
+.vitrina .meta strong{display:block;font-weight:600;line-height:1.25}
+.vitrina .meta .p{font-family:var(--disp);font-weight:700;font-size:28px;white-space:nowrap}
+.dots{display:flex;gap:6px;padding:0 18px 16px}
+.dots button{width:28px;height:4px;border:0;border-radius:2px;background:var(--linea);cursor:pointer;padding:0}
+.dots button[aria-current="true"]{background:var(--rojo)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:36px}.vitrina{justify-self:start;width:100%;display:grid;grid-template-columns:150px 1fr}.vitrina .plate{aspect-ratio:1;grid-row:span 2}.vitrina .meta{flex-direction:column;align-items:flex-start;gap:6px}.dots{padding:0 18px 16px}}
+
+/* facts */
+.facts{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:var(--acero)}
+.facts ul{list-style:none;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.facts li{padding:22px 20px;font-size:15.5px;color:var(--cromo);line-height:1.35}
+.facts li+li{border-left:1px solid var(--linea)}
+.facts strong{display:block;color:#fff;font-family:var(--disp);font-weight:700;font-size:22px;margin-bottom:2px}
+@media (max-width:900px){.facts ul{grid-template-columns:1fr 1fr}.facts li:nth-child(3){border-left:0}.facts li:nth-child(n+3){border-top:1px solid var(--linea)}}
+@media (max-width:480px){.facts li{padding:16px 12px;font-size:14px}.facts strong{font-size:19px}}
+
+.sec{padding:clamp(64px,9vw,112px) 0}
+.h2{font-family:var(--disp);font-weight:800;font-size:clamp(36px,4.8vw,60px);line-height:.95;margin:0;letter-spacing:-.005em}
+.lead{color:var(--cromo);max-width:52ch;margin:12px 0 0}
+
+/* categories: a rail of lit plates */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(170px,1fr);gap:14px;overflow-x:auto;margin:36px calc(var(--pad)*-1) 0;padding:0 var(--pad) 6px;scrollbar-width:thin;scrollbar-color:var(--linea) transparent;scroll-snap-type:x mandatory}
+.rail .cat{scroll-snap-align:start;background:var(--acero);border:1px solid var(--linea);border-radius:6px;overflow:hidden;cursor:pointer;padding:0;text-align:left;transition:border-color .2s}
+.rail .cat:hover,.rail .cat[aria-pressed="true"]{border-color:var(--cromo)}
+.rail .cat .pl{display:block;aspect-ratio:1/.9;background:var(--spot)}
+.rail .cat .pl img{width:100%;height:100%;object-fit:contain;padding:14%;mix-blend-mode:multiply}
+.rail .cat span.t{display:block;padding:12px 14px 14px}
+.rail .cat strong{display:block;font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.1}
+.rail .cat small{color:var(--cromo);font-size:14px}
+
+/* catalog */
+#catalogo{scroll-margin-top:84px}
+.cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.cat-head .meta{display:flex;gap:14px;align-items:center;color:var(--cromo);margin-top:8px}
+.linkbtn{background:none;border:0;padding:0;color:var(--ambar);cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.sort{display:flex;align-items:center;gap:10px;color:var(--cromo);font-size:15px}
+.sort select{height:44px;background:var(--acero);color:#fff;border:1px solid var(--linea);border-radius:4px;padding:0 12px;font:inherit;font-size:15px}
+.chips{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--linea);margin-top:26px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;background:none;border:0;border-bottom:2px solid transparent;padding:12px 14px;color:var(--cromo);font-weight:500;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.chip:hover{color:#fff}
+.chip[aria-pressed="true"]{color:#fff;border-bottom-color:var(--rojo)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:28px}
+@media (max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
+.card{background:var(--acero);border:1px solid var(--linea);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
+.card:hover{border-color:#41536A}
+.card .pl{position:relative;display:block;width:100%;aspect-ratio:1;background:var(--spot);border:0;padding:0;cursor:pointer}
+.card .pl img{width:100%;height:100%;object-fit:contain;padding:12%;mix-blend-mode:multiply;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card .pl:hover img{transform:translateY(-4px) scale(1.03)}
+.card .low{position:absolute;left:10px;top:10px;background:var(--diesel);color:#fff;border-radius:3px;font-size:12.5px;padding:3px 8px;font-weight:500}
+.card .low::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ambar);margin-right:6px;vertical-align:1px;box-shadow:0 0 8px var(--ambar)}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:16px;font-weight:500;line-height:1.3;margin:0;cursor:pointer}
+.card .sku{color:#8E9BA8;font-size:14px;margin-top:3px}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;gap:8px}
+.card .price{font-family:var(--disp);font-weight:700;font-size:25px;line-height:1}
+.add{height:40px;padding:0 14px;border-radius:4px;border:1px solid #4A5B6E;background:transparent;color:#fff;font-weight:600;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .15s,border-color .15s}
+.add:hover,.add.ok{background:var(--rojo);border-color:var(--rojo)}
+@media (max-width:560px){.add span{display:none}.add{width:40px;padding:0;justify-content:center}.card .body{padding:12px}.card .price{font-size:21px}.card h3{font-size:15px}}
+.more{display:flex;justify-content:center;margin-top:40px}
+.empty{border:1px dashed var(--linea);border-radius:6px;padding:48px 24px;text-align:center;margin-top:28px}
+.empty h3{font-family:var(--disp);font-size:30px;margin:0 0 6px}
+.empty p{color:var(--cromo);margin:0 0 20px}
+
+/* night band */
+.band{position:relative;isolation:isolate;overflow:hidden;border-top:1px solid var(--linea)}
+.band::before{content:"";position:absolute;inset:0;z-index:-2;background:url(img/fotos/noche.jpg) 30% 55%/cover}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(16,22,29,.2) 0%,rgba(16,22,29,.8) 50%,rgba(16,22,29,.94) 100%)}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.band .txt{grid-column:2}
+.band p{color:#D3DAE1;max-width:46ch}
+.how{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:0;border-top:1px solid var(--linea)}
+.how li{display:grid;grid-template-columns:52px 1fr;padding:16px 0;border-bottom:1px solid var(--linea)}
+.how b{font-family:var(--disp);font-size:28px;font-weight:700;color:var(--ambar);line-height:1}
+.how strong{display:block;font-weight:600}
+.how span{color:var(--cromo);font-size:15.5px}
+@media (max-width:860px){.band .wrap{grid-template-columns:1fr}.band .txt{grid-column:1}.band::after{background:rgba(16,22,29,.82)}}
+
+/* routes */
+.rutas{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:start}
+.rutas ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--linea)}
+.rutas li{display:flex;justify-content:space-between;gap:12px;padding:18px 0;border-bottom:1px solid var(--linea);font-family:var(--disp);font-size:clamp(24px,2.6vw,32px);font-weight:600}
+.rutas li span{font-family:var(--sans);font-size:15px;color:var(--cromo);font-weight:400;align-self:center;text-align:right}
+@media (max-width:860px){.rutas{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--linea);padding:56px 0 28px;color:var(--cromo);font-size:15.5px;background:#0C1116}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;font-family:var(--disp);font-size:20px;margin:0 0 12px;font-weight:700}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer button.f{background:none;border:0;padding:0;color:inherit;cursor:pointer;text-align:left}
+footer button.f:hover,footer a:hover{color:#fff}
+footer .logo{width:116px;margin-bottom:12px}
+footer .legal{border-top:1px solid var(--linea);margin-top:40px;padding-top:20px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:35;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:none;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+@media (max-width:600px){.fab{display:grid}}
+
+/* overlays */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(5,8,11,.7);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.scrim.on{opacity:1;visibility:visible}
+.modal{position:fixed;z-index:60;left:50%;top:50%;width:min(980px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:var(--acero);border:1px solid var(--linea);border-radius:8px;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s,visibility .3s}
+.modal.on{transform:translate(-50%,-50%);opacity:1;visibility:visible}
+.modal .in{display:grid;grid-template-columns:1.05fr 1fr}
+.modal .big{background:var(--spot);aspect-ratio:1}
+.modal .big img{width:100%;height:100%;object-fit:contain;padding:11%;mix-blend-mode:multiply}
+.modal .info{padding:34px 30px;display:flex;flex-direction:column}
+.modal .kicker{color:var(--ambar);font-weight:600;font-size:15px}
+.modal h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3.4vw,42px);line-height:1;margin:8px 0 16px}
+.modal .p{font-family:var(--disp);font-weight:700;font-size:42px;line-height:1}
+.modal .p small{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--cromo);margin-left:10px}
+.specs{margin:22px 0;border-top:1px solid var(--linea)}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--linea);font-size:15.5px}
+.specs dt{color:var(--cromo)} .specs dd{margin:0;font-weight:500;text-align:right}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--linea);border-radius:4px;height:48px}
+.qty button{width:42px;height:100%;border:0;background:none;font-size:20px;cursor:pointer;color:#fff}
+.qty output{min-width:28px;text-align:center;font-weight:600}
+.buy{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.buy .btn{flex:1}
+.x{position:absolute;right:12px;top:12px;width:42px;height:42px;border-radius:50%;border:0;background:var(--diesel);color:#fff;cursor:pointer;display:grid;place-items:center;z-index:2}
+@media (max-width:720px){.modal{top:auto;bottom:0;left:0;width:100%;max-height:92vh;border-radius:10px 10px 0 0;transform:translateY(30px)}.modal.on{transform:none}.modal .in{grid-template-columns:1fr}.modal .big{aspect-ratio:auto;height:270px}.modal .info{padding:22px 18px 26px}}
+.drawer{position:fixed;z-index:60;top:0;right:0;height:100%;width:min(440px,100vw);background:var(--acero);border-left:1px solid var(--linea);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--linea)}
+.drawer .dh h2{font-family:var(--disp);font-size:30px;margin:0}
+.drawer .x{position:static}
+.lines{flex:1;overflow:auto;padding:4px 20px}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:center}
+.line .t{width:72px;height:72px;border-radius:4px;background:var(--spot)}
+.line .t img{width:100%;height:100%;object-fit:contain;padding:10%;mix-blend-mode:multiply}
+.line h3{font-size:15px;font-weight:500;margin:0;line-height:1.3}
+.line small{color:var(--cromo);display:block}
+.line .qty{height:36px;margin-top:6px}.line .qty button{width:34px}
+.line .r{text-align:right}.line .r strong{display:block;font-family:var(--disp);font-size:21px}
+.line .del{background:none;border:0;color:var(--cromo);font-size:14px;cursor:pointer;text-decoration:underline;padding:4px 0}
+.dfoot{border-top:1px solid var(--linea);padding:18px 20px 22px;background:var(--diesel)}
+.tot{display:flex;justify-content:space-between;font-size:15.5px;padding:3px 0;color:var(--cromo)}
+.tot.big{color:#fff;font-weight:600;font-size:18px;padding-top:8px;align-items:baseline}
+.tot.big span:last-child{font-family:var(--disp);font-size:30px}
+.dfoot .btn{width:100%;margin-top:14px;height:54px}
+.dfoot p{font-size:14px;color:var(--cromo);margin:10px 0 0}
+.cart-empty{padding:56px 8px;text-align:center;color:var(--cromo)}
+.cart-empty strong{display:block;color:#fff;font-family:var(--disp);font-size:28px;margin-bottom:6px}
+.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,20px);opacity:0;visibility:hidden;background:var(--blanco);color:var(--diesel);border-radius:6px;padding:12px 12px 12px 18px;display:flex;gap:16px;align-items:center;box-shadow:0 14px 40px rgba(0,0,0,.5);transition:all .25s;max-width:calc(100vw - 32px);font-size:15.5px}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast span{flex:1}
+.toast button{background:var(--diesel);color:#fff;border:0;border-radius:4px;height:36px;padding:0 12px;font-weight:600;cursor:pointer;white-space:nowrap}
+@media (max-width:600px){.toast{bottom:86px;width:calc(100vw - 32px)}.search .btn{padding:0 18px}.search label{padding-left:12px}}
+</style>
+</head>
+<body>
+
+<header class="top" data-top>
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Hondu Truck, inicio"><img src="logo-blanco.png" alt="" width="58" height="34"><span>HONDU TRUCK</span></a>
+    <nav class="links" aria-label="Secciones"><a href="#catalogo">Catálogo</a><a href="#pedir">Cómo pedir</a><a href="#envios">Envíos</a><a href="#contacto">Contacto</a></nav>
+    <div class="top-actions">
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      <button class="btn btn-ghost" type="button" data-open-cart aria-label="Abrir pedido">Pedido <span class="cart-n" data-cart-n hidden>0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-bg" role="img" aria-label="Luces de vehículos en una carretera al atardecer"></div>
+  <div class="wrap">
+    <div>
+      <h1 id="h1">Cromo, luces y accesorios para tu camión</h1>
+      <p>Piezas en existencia con número de parte, garantía de fábrica y envío a todo Honduras en 24 a 48 horas.</p>
+      <form class="search" role="search" data-search>
+        <label><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Buscar pieza</span>
+        <input type="search" placeholder="Nombre de la pieza o número de parte" autocomplete="off" enterkeyhint="search"></label>
+        <button class="btn btn-red" type="submit">Buscar</button>
+      </form>
+      <div class="quick"><span>Lo más buscado:</span><button type="button" data-q="Tapa tuerca">Tapa tuerca</button><button type="button" data-q="Mano libre">Mano libre</button><button type="button" data-q="Lodera">Lodera</button><button type="button" data-q="Vía doble cara">Vía LED</button><button type="button" data-q="Cromada">Cromados</button></div>
+    </div>
+    <aside class="vitrina" aria-label="Pieza destacada" data-vitrina>
+      <button class="plate" type="button" data-v-open><img data-v-img alt=""></button>
+      <div class="meta"><div><small data-v-cat></small><strong data-v-name></strong></div><span class="p" data-v-price></span></div>
+      <div class="dots" data-v-dots></div>
+    </aside>
+  </div>
+</section>
+
+<section class="facts" aria-label="Lo que ofrecemos">
+  <ul class="wrap">
+    <li><strong><span data-total-count>52</span> piezas</strong>en existencia y con número de parte</li>
+    <li><strong>24–48 h</strong>de envío a todo Honduras</li>
+    <li><strong>6 meses</strong>de garantía por defecto de fábrica</li>
+    <li><strong>Mismo día</strong>cotización por WhatsApp</li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="cats-t">
+  <div class="wrap">
+    <h2 class="h2" id="cats-t">Elige por categoría</h2>
+    <div class="rail" data-cats></div>
+  </div>
+</section>
+
+<section class="sec" id="catalogo" aria-labelledby="cat-t" style="padding-top:0">
+  <div class="wrap">
+    <div class="cat-head">
+      <div><h2 class="h2" id="cat-t" data-heading data-default="Todo el catálogo">Todo el catálogo</h2>
+        <div class="meta"><span data-count></span><button class="linkbtn" type="button" data-clear hidden>Quitar búsqueda</button></div></div>
+      <label class="sort">Ordenar<select data-sort><option value="rel">Destacados</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
+    </div>
+    <div class="chips" data-chips role="toolbar" aria-label="Filtrar por categoría"></div>
+    <div class="grid" data-grid aria-live="polite"></div>
+    <div class="empty" data-empty hidden><h3>Esa pieza no está en el catálogo</h3><p>Envíanos el número de parte y te decimos si la conseguimos.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a></div>
+    <div class="more"><button class="btn btn-ghost" type="button" data-more hidden>Mostrar más</button></div>
+  </div>
+</section>
+
+<section class="sec band" id="pedir" aria-labelledby="band-t">
+  <div class="wrap"><div class="txt">
+    <h2 class="h2" id="band-t">¿Buscas una pieza que no aparece aquí?</h2>
+    <p>Tenemos más inventario del que cabe en la página. Mándanos una foto o el número de parte y te respondemos con precio y existencia el mismo día.</p>
+    <a class="btn btn-wa" data-wa data-wa-msg="Hola Hondu Truck, les mando la foto / número de parte de la pieza que necesito: " href="#" target="_blank" rel="noopener">Enviar foto por WhatsApp</a>
+    <ol class="how" aria-label="Cómo hacer tu pedido">
+      <li><b>1</b><div><strong>Arma tu pedido</strong><span>Agrega piezas o mándanos el número de parte.</span></div></li>
+      <li><b>2</b><div><strong>Confírmalo por WhatsApp</strong><span>Te confirmamos existencia, precio y forma de pago.</span></div></li>
+      <li><b>3</b><div><strong>Recíbelo en 24–48 h</strong><span>Enviamos a todo el país.</span></div></li>
+    </ol>
+  </div></div>
+</section>
+
+<section class="sec" id="envios" aria-labelledby="env-t">
+  <div class="wrap rutas">
+    <div><h2 class="h2" id="env-t">Salidas diarias</h2><p class="lead">Enviamos a todo Honduras en 24 a 48 horas. Si tu ciudad no está en la lista, escríbenos: también llegamos.</p></div>
+    <ul>
+      <li>San Pedro Sula<span>Salida diaria</span></li>
+      <li>Tegucigalpa<span>Salida diaria</span></li>
+      <li>Choloma<span>Salida diaria</span></li>
+      <li>Puerto Cortés<span>Salida diaria</span></li>
+      <li>Resto del país<span>Consúltanos</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="cols">
+      <div><img class="logo" src="logo-blanco.png" alt="Hondu Truck" loading="lazy"><p style="margin:0;max-width:30ch">Accesorios y repuestos para camiones de carga en Honduras.</p></div>
+      <div><h4>Contacto</h4><ul><li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp 9775-7535</a></li><li>Lunes a sábado</li><li>8:00 a. m. a 5:00 p. m.</li></ul></div>
+      <div><h4>Categorías</h4><ul data-foot-cats></ul></div>
+      <div><h4>Lo más buscado</h4><ul><li><button class="f" type="button" data-q="Tapa tuerca 33 mm">Tapa tuerca 33 mm</button></li><li><button class="f" type="button" data-q="Lodera 24x30">Lodera 24x30</button></li><li><button class="f" type="button" data-q="Vía doble cara">Vía doble cara LED</button></li><li><button class="f" type="button" data-q="Extensión palanca">Extensión de palanca</button></li><li><button class="f" type="button" data-q="Antena látigo">Antena látigo</button></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span data-year>2026</span> Hondu Truck. Precios en lempiras, ISV incluido.</span><span>Garantía de 6 meses por defecto de fábrica.</span></div>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg></a>
+
+<div class="scrim" data-scrim></div>
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-name" data-modal>
+  <button class="x" type="button" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="in">
+    <div class="big"><img data-m-img alt=""></div>
+    <div class="info">
+      <div class="kicker" data-m-cat></div>
+      <h2 id="m-name" data-m-name></h2>
+      <div class="p"><span data-m-price></span><small>ISV incluido</small></div>
+      <dl class="specs" data-m-specs></dl>
+      <div class="buy">
+        <div class="qty"><button type="button" data-m-dec aria-label="Quitar uno">−</button><output data-m-qty>1</output><button type="button" data-m-inc aria-label="Agregar uno">+</button></div>
+        <button class="btn btn-red" type="button" data-m-add>Agregar al pedido</button>
+        <a class="btn btn-wa" data-m-wa href="#" target="_blank" rel="noopener" style="flex-basis:100%">Preguntar por esta pieza</a>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="c-t" data-drawer>
+  <div class="dh"><h2 id="c-t">Tu pedido</h2><button class="x" type="button" data-close aria-label="Cerrar pedido"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="lines" data-lines></div>
+  <div class="dfoot" data-cart-foot>
+    <div class="tot"><span>Subtotal</span><span data-sub></span></div>
+    <div class="tot"><span>Envío</span><span>Se confirma por WhatsApp</span></div>
+    <div class="tot big"><span>Total</span><span data-total></span></div>
+    <a class="btn btn-wa" data-order href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+    <p>Te respondemos para confirmar existencia, forma de pago y envío.</p>
+  </div>
+</aside>
+<div class="toast" role="status" data-toast><span data-toast-t></span><button type="button" data-open-cart>Ver pedido</button></div>
+
+<script>
+window.HT = {
+  offset: 84, scrollAt: 40,
+  card: function(p,h){
+    var s=h.stock(p);
+    return '<article class="card"><button class="pl" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy" width="550" height="550">'+(s?'<span class="low">'+s+'</span>':'')+'</button>'+
+      '<div class="body"><h3 data-open="'+p.id+'">'+h.esc(p.name)+'</h3><div class="sku">No. de parte '+h.esc(p.sku)+'</div>'+
+      '<div class="row"><span class="price">'+h.money(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'" aria-label="Agregar '+h.esc(p.name)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Agregar</span></button></div></div></article>';
+  },
+  cat: function(c,n,h){return '<button class="cat" type="button" data-cat="'+c.k+'"><span class="pl"><img src="'+h.img(c.t)+'" alt="" loading="lazy"></span><span class="t"><strong>'+c.n+'</strong><small>'+n+' productos</small></span></button>'},
+  chip: function(c,active){return '<button class="chip" type="button" data-cat="'+(c?c.k:"")+'" aria-pressed="'+active+'">'+(c?c.n:"Todo")+'</button>'},
+  ready: function(core){
+    // rotating showcase: one chrome piece at a time
+    var ids=[10,24,41,48,23], i=0, timer, still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var img=document.querySelector("[data-v-img]"), dots=document.querySelector("[data-v-dots]");
+    dots.innerHTML=ids.map(function(_,k){return '<button type="button" aria-label="Pieza '+(k+1)+'" data-v="'+k+'"></button>'}).join("");
+    function set(k,instant){
+      i=k; var p=core.byId(ids[k]);
+      var apply=function(){img.src=p.img;img.alt=p.name;img.classList.remove("out");
+        document.querySelector("[data-v-cat]").textContent=p.cat;document.querySelector("[data-v-name]").textContent=p.name;document.querySelector("[data-v-price]").textContent=core.h.money(p.price);
+        Array.prototype.forEach.call(dots.children,function(d,j){d.setAttribute("aria-current",String(j===k))});};
+      if(instant||still) apply(); else {img.classList.add("out");setTimeout(apply,300)}
+    }
+    function loop(){clearInterval(timer);if(!still)timer=setInterval(function(){set((i+1)%ids.length)},4500)}
+    dots.addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(b){set(+b.dataset.v);loop()}});
+    document.querySelector("[data-v-open]").addEventListener("click",function(){core.open(ids[i])});
+    set(0,true); loop();
+  }
+};
+</script>
+<script src="core.js"></script>
+</body>
+</html>

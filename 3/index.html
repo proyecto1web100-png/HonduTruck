@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hondu Truck · Repuestos y accesorios para camión por número de parte</title>
+<meta name="description" content="Catálogo de repuestos y accesorios para camión con número de parte, existencia y precio. Envíos a todo Honduras en 24–48 h. Cotiza por WhatsApp.">
+<meta name="theme-color" content="#172A45">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#FFFFFF; --concreto:#EDEFF1; --concreto-2:#DDE1E5; --linea:#D3D8DD;
+  --tinta:#172A45; --tinta-2:#22385A; --texto:#16202B; --texto-2:#56616D;
+  --rojo:#C8161D; --rojo-2:#A61117; --amarillo:#FFC21A; --wa:#1FA855;
+  --wrap:1320px; --pad:clamp(16px,3.6vw,40px);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;font-family:"Archivo",system-ui,sans-serif;font-size:16.5px;line-height:1.5;color:var(--texto);background:var(--papel);font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--amarillo);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wide{font-stretch:125%;font-weight:800;letter-spacing:-.01em}
+
+/* utility bar */
+.util{background:var(--tinta);color:#C9D3E0;font-size:14px}
+.util .wrap{display:flex;gap:24px;height:38px;align-items:center}
+.util a{color:#fff;text-decoration:none;font-weight:600;margin-left:auto}
+.util .show-s{display:none}
+@media (max-width:760px){.util .hide-s{display:none}.util .show-s{display:inline}.util .wrap{justify-content:space-between}.util a{margin-left:0}}
+
+/* header with permanent search */
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:78px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand img{width:62px}
+.brand span{font-stretch:125%;font-weight:900;font-size:20px;line-height:1;letter-spacing:-.01em}
+.brand span em{display:block;font-style:normal;font-stretch:100%;font-weight:500;font-size:12.5px;color:var(--texto-2);letter-spacing:0;margin-top:3px}
+.hsearch{flex:1;max-width:640px;display:flex;height:50px;border:2px solid var(--tinta);border-radius:3px}
+.hsearch label{flex:1;display:flex;align-items:center;gap:10px;padding-left:14px;min-width:0;color:var(--texto-2)}
+.hsearch input{flex:1;min-width:0;border:0;outline:none;font:inherit;font-size:16px;height:100%;color:var(--texto)}
+.hsearch button{border:0;background:var(--tinta);color:#fff;font-weight:700;padding:0 22px;cursor:pointer}
+.hsearch button:hover{background:var(--tinta-2)}
+.cartbtn{margin-left:auto;display:flex;align-items:center;gap:10px;height:50px;padding:0 16px;border:1px solid var(--linea);border-radius:3px;background:#fff;cursor:pointer;font-weight:700}
+.cartbtn:hover{border-color:var(--tinta)}
+.cart-n{min-width:24px;height:24px;padding:0 7px;border-radius:3px;background:var(--rojo);color:#fff;font-size:13px;display:inline-grid;place-items:center}
+@keyframes bump{40%{transform:scale(1.3)}} .cart-n.bump{animation:bump .4s ease}
+@media (max-width:760px){.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}.hsearch{order:3;flex-basis:100%;max-width:none;height:46px}.cartbtn{height:44px}.brand span em{display:none}.cartbtn .lbl{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:50px;padding:0 22px;border-radius:3px;border:2px solid transparent;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.btn-ink{background:var(--tinta);color:#fff}.btn-ink:hover{background:var(--tinta-2)}
+.btn-red{background:var(--rojo);color:#fff}.btn-red:hover{background:var(--rojo-2)}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#178a45}
+.btn-line{border-color:var(--tinta);color:var(--tinta);background:#fff}.btn-line:hover{background:var(--concreto)}
+
+/* hero: split with a photo mosaic */
+.hero{padding:clamp(28px,4vw,48px) 0 clamp(40px,6vw,72px)}
+.hero .wrap{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(34px,4vw,58px);line-height:1;margin:0}
+.hero p{font-size:clamp(17px,1.4vw,19px);color:var(--texto-2);max-width:44ch;margin:22px 0 28px}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.ficha{margin:32px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15.5px;border-top:1px solid var(--linea);padding-top:20px}
+.ficha dt{font-weight:700}
+.ficha dd{margin:0;color:var(--texto-2)}
+.mosaic{display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(380px,44vw,560px)}
+.mosaic figure{margin:0;overflow:hidden;border-radius:3px;position:relative;background:var(--concreto)}
+.mosaic figure img{width:100%;height:100%;object-fit:cover}
+.mosaic .m1{grid-row:span 2}
+.mosaic .m3{background:var(--concreto);cursor:pointer;border:0;padding:0;text-align:left;display:block;width:100%;height:100%}
+.mosaic .m3 img{object-fit:contain;padding:12% 18% 26%;mix-blend-mode:multiply}
+.mosaic .m3 .cap{position:absolute;left:14px;right:14px;bottom:12px;font-size:14px;line-height:1.3;color:var(--texto-2)}
+.mosaic .m3 .cap b{display:block;color:var(--texto);font-size:15px}
+.tag{position:absolute;left:12px;top:12px;z-index:1;background:var(--amarillo);color:var(--texto);font-weight:700;font-size:13px;padding:4px 9px;border-radius:2px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.mosaic{height:auto;grid-template-rows:200px 200px}}
+@media (max-width:480px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px}.mosaic .m1{grid-row:auto;grid-column:span 2}}
+
+/* counter: sidebar + list */
+.mostrador{border-top:1px solid var(--linea);background:var(--concreto)}
+#catalogo{scroll-margin-top:96px}
+.mostrador .wrap{display:grid;grid-template-columns:260px 1fr;gap:clamp(20px,3vw,40px);padding-top:40px;padding-bottom:72px}
+.side{position:sticky;top:100px;align-self:start}
+.side h2{font-size:15px;font-weight:800;margin:0 0 10px;color:var(--texto-2)}
+.side .cats{display:grid;gap:2px;background:#fff;border:1px solid var(--linea);border-radius:3px;padding:6px}
+.side .cat{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border:0;background:none;text-align:left;cursor:pointer;border-radius:2px;font-weight:500;position:relative}
+.side .cat:hover{background:var(--concreto)}
+.side .cat small{color:var(--texto-2);font-size:13.5px}
+.side .cat[aria-pressed="true"]{background:var(--tinta);color:#fff}
+.side .cat[aria-pressed="true"] small{color:#C9D3E0}
+.side .help{margin-top:16px;background:var(--tinta);color:#fff;border-radius:3px;padding:18px}
+.side .help strong{display:block;font-stretch:115%;font-weight:800;font-size:18px;line-height:1.2;margin-bottom:6px}
+.side .help p{margin:0 0 14px;font-size:14.5px;color:#C9D3E0}
+.side .help .btn{width:100%;height:44px;font-size:15px}
+.main-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px 20px}
+.mostrador .wrap>div{min-width:0}
+.main-head h2{font-size:clamp(26px,3vw,40px);margin:0;line-height:1.05;overflow-wrap:anywhere}
+.item .nm{min-width:0}
+.main-head .meta{display:flex;gap:14px;align-items:center;color:var(--texto-2);margin-top:6px}
+.linkbtn{background:none;border:0;padding:0;color:var(--rojo);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.sort{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--texto-2)}
+.sort select{height:42px;border:1px solid var(--linea);border-radius:3px;padding:0 10px;font:inherit;font-size:15px;background:#fff;color:var(--texto)}
+.chips{display:none}
+/* the list */
+.thead,.item{display:grid;grid-template-columns:84px minmax(0,2.4fr) minmax(0,1.1fr) 120px 110px 128px;gap:18px;align-items:center}
+.thead{margin-top:22px;padding:0 16px 8px;font-size:13.5px;font-weight:700;color:var(--texto-2)}
+.thead span:nth-child(5),.item .price{text-align:right}
+.list{display:grid;gap:6px}
+.item{background:#fff;border:1px solid var(--linea);border-radius:3px;padding:10px 16px 10px 10px;transition:border-color .15s}
+.item:hover{border-color:#9AA6B2}
+.item .th{width:84px;height:84px;background:#F4F5F6;border-radius:2px;border:0;padding:0;cursor:pointer}
+.item .th img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
+.item h3{font-size:16.5px;font-weight:600;margin:0;line-height:1.3;cursor:pointer}
+.item h3:hover{text-decoration:underline}
+.item .c{color:var(--texto-2);font-size:14px}
+.item .sku{font-stretch:88%;font-weight:600;font-size:15.5px;word-break:break-all}
+.item .st{font-size:14.5px;color:var(--texto-2)}
+.item .st.low{color:var(--texto);font-weight:600}
+.item .st.low::before{content:"";display:inline-block;width:8px;height:8px;background:var(--amarillo);border:1px solid #D9A100;border-radius:1px;margin-right:6px;vertical-align:0}
+.item .price{font-stretch:112%;font-weight:800;font-size:20px}
+.add{height:42px;border:2px solid var(--tinta);background:#fff;color:var(--tinta);border-radius:3px;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .15s,color .15s}
+.add:hover{background:var(--tinta);color:#fff}
+.add.ok{background:var(--rojo);border-color:var(--rojo);color:#fff}
+.more{display:flex;justify-content:center;margin-top:28px}
+.empty{background:#fff;border:1px solid var(--linea);border-radius:3px;padding:44px 24px;text-align:center;margin-top:16px}
+.empty h3{font-stretch:115%;font-size:24px;margin:0 0 6px}
+.empty p{color:var(--texto-2);margin:0 0 18px}
+@media (max-width:1100px){.thead,.item{grid-template-columns:72px minmax(0,2fr) minmax(0,1fr) 100px 120px}.item .st,.thead span:nth-child(4){display:none}.item .th{width:72px;height:72px}}
+@media (max-width:860px){
+  .mostrador .wrap{grid-template-columns:1fr;padding-top:28px}
+  .side{position:static}.side .cats,.side h2{display:none}.side .help{display:none}
+  .chips{display:flex;gap:6px;overflow-x:auto;margin:18px calc(var(--pad)*-1) 0;padding:0 var(--pad);scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex-shrink:0;height:40px;padding:0 14px;border:1px solid var(--linea);background:#fff;border-radius:3px;font-weight:600;font-size:14.5px;cursor:pointer;white-space:nowrap}
+  .chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+  .thead{display:none}
+  .list{margin-top:16px}
+  .item{grid-template-columns:76px 1fr auto;grid-template-areas:"th name name" "th sku add";gap:4px 12px;padding:10px}
+  .item .th{grid-area:th;width:76px;height:76px}
+  .item .nm{grid-area:name}
+  .item .sku{grid-area:sku;font-size:14px;align-self:end}
+  .item .st{display:none}
+  .item .pa{grid-area:add;display:flex;align-items:center;gap:10px}
+  .item .price{font-size:18px}
+  .item .c{display:none}
+  .add{width:42px;height:40px}.add span{display:none}
+}
+@media (min-width:861px){.item .pa{display:contents}}
+
+/* delivery band */
+.envio{display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:#fff}
+.envio .ph{background:url(img/fotos/carretera.jpg) center/cover}
+.envio .tx{padding:clamp(40px,6vw,80px) var(--pad);max-width:640px}
+.envio h2{font-size:clamp(32px,3.8vw,52px);line-height:.98;margin:0}
+.envio p{color:var(--texto-2);margin:14px 0 24px;max-width:46ch}
+.tabla{width:100%;border-collapse:collapse;font-size:16px}
+.tabla th,.tabla td{text-align:left;padding:12px 0;border-bottom:1px solid var(--linea)}
+.tabla th{font-size:13.5px;color:var(--texto-2);font-weight:700}
+.tabla td:last-child,.tabla th:last-child{text-align:right}
+.tabla td:first-child{font-weight:600}
+@media (max-width:860px){.envio{grid-template-columns:1fr}.envio .ph{min-height:240px}}
+
+/* steps */
+.pasos{background:var(--tinta);color:#fff}
+.pasos .wrap{padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);display:grid;grid-template-columns:1.1fr 2fr;gap:40px;align-items:start}
+.pasos h2{font-size:clamp(30px,3.4vw,46px);line-height:1;margin:0 0 18px}
+.pasos p{color:#C9D3E0;margin:0 0 22px}
+.pasos ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;border-top:4px solid var(--amarillo)}
+.pasos li{counter-increment:s;padding:20px 20px 0 0}
+.pasos li+li{padding-left:20px;border-left:1px solid rgba(255,255,255,.18)}
+.pasos li::before{content:"Paso " counter(s);display:block;font-size:14px;font-weight:700;color:var(--amarillo);margin-bottom:8px}
+.pasos li strong{display:block;font-stretch:112%;font-size:20px;font-weight:800;line-height:1.15;margin-bottom:6px}
+.pasos li span{color:#C9D3E0;font-size:15.5px}
+@media (max-width:860px){.pasos .wrap{grid-template-columns:1fr}.pasos ol{grid-template-columns:1fr}.pasos li,.pasos li+li{padding:16px 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.18)}}
+
+footer{background:#fff;border-top:1px solid var(--linea);padding:52px 0 28px;font-size:15.5px;color:var(--texto-2)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer h4{color:var(--texto);font-stretch:112%;font-weight:800;font-size:17px;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer button.f{background:none;border:0;padding:0;color:inherit;cursor:pointer;text-align:left}
+footer button.f:hover,footer a:hover{color:var(--texto);text-decoration:underline}
+footer .logo{width:110px;margin-bottom:10px}
+footer .legal{border-top:1px solid var(--linea);margin-top:36px;padding-top:18px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:35;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:none;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+@media (max-width:760px){.fab{display:grid}}
+
+/* overlays */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(23,42,69,.5);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.scrim.on{opacity:1;visibility:visible}
+.modal{position:fixed;z-index:60;left:50%;top:50%;width:min(960px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border-radius:4px;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s,visibility .3s;border-top:6px solid var(--tinta)}
+.modal.on{transform:translate(-50%,-50%);opacity:1;visibility:visible}
+.modal .in{display:grid;grid-template-columns:1fr 1fr}
+.modal .big{background:#F4F5F6;aspect-ratio:1}
+.modal .big img{width:100%;height:100%;object-fit:contain;padding:10%;mix-blend-mode:multiply}
+.modal .info{padding:30px 28px;display:flex;flex-direction:column}
+.modal .kicker{color:var(--texto-2);font-weight:700;font-size:14.5px}
+.modal h2{font-stretch:112%;font-weight:800;font-size:clamp(26px,3vw,34px);line-height:1.05;margin:6px 0 14px}
+.modal .p{font-stretch:115%;font-weight:800;font-size:36px;line-height:1}
+.modal .p small{font-stretch:100%;font-size:14px;font-weight:500;color:var(--texto-2);margin-left:8px}
+.specs{margin:20px 0;border:1px solid var(--linea);border-radius:3px}
+.specs div{display:grid;grid-template-columns:150px 1fr;font-size:15px}
+.specs div+div{border-top:1px solid var(--linea)}
+.specs dt{background:var(--concreto);padding:9px 12px;font-weight:600}
+.specs dd{margin:0;padding:9px 12px}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--linea);border-radius:3px;height:50px}
+.qty button{width:42px;height:100%;border:0;background:none;font-size:20px;cursor:pointer}
+.qty output{min-width:28px;text-align:center;font-weight:700}
+.buy{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.buy .btn{flex:1}
+.x{position:absolute;right:12px;top:12px;width:42px;height:42px;border-radius:3px;border:1px solid var(--linea);background:#fff;cursor:pointer;display:grid;place-items:center;z-index:2}
+@media (max-width:720px){.modal{top:auto;bottom:0;left:0;width:100%;max-height:92vh;transform:translateY(30px)}.modal.on{transform:none}.modal .in{grid-template-columns:1fr}.modal .big{aspect-ratio:auto;height:250px}.modal .info{padding:20px 18px 24px}.specs div{grid-template-columns:130px 1fr}}
+.drawer{position:fixed;z-index:60;top:0;right:0;height:100%;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--tinta);color:#fff}
+.drawer .dh h2{font-stretch:115%;font-weight:800;font-size:24px;margin:0}
+.drawer .x{position:static;background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.lines{flex:1;overflow:auto;padding:4px 20px}
+.line{display:grid;grid-template-columns:68px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:center}
+.line .t{width:68px;height:68px;background:#F4F5F6;border-radius:2px}
+.line .t img{width:100%;height:100%;object-fit:contain;padding:8%;mix-blend-mode:multiply}
+.line h3{font-size:15px;font-weight:600;margin:0;line-height:1.3}
+.line small{color:var(--texto-2);display:block}
+.line .qty{height:36px;margin-top:6px;border-width:1px}.line .qty button{width:34px}
+.line .r{text-align:right}.line .r strong{display:block;font-stretch:112%;font-weight:800;font-size:18px}
+.line .del{background:none;border:0;color:var(--texto-2);font-size:14px;cursor:pointer;text-decoration:underline;padding:4px 0}
+.dfoot{background:var(--concreto);padding:18px 20px 22px}
+.tot{display:flex;justify-content:space-between;font-size:15.5px;padding:3px 0}
+.tot.big{font-weight:700;font-size:18px;padding-top:8px;align-items:baseline}
+.tot.big span:last-child{font-stretch:115%;font-weight:800;font-size:28px}
+.dfoot .btn{width:100%;margin-top:14px;height:54px}
+.dfoot p{font-size:14px;color:var(--texto-2);margin:10px 0 0}
+.cart-empty{padding:56px 8px;text-align:center;color:var(--texto-2)}
+.cart-empty strong{display:block;color:var(--texto);font-stretch:112%;font-size:22px;margin-bottom:6px}
+.toast{position:fixed;left:50%;bottom:24px;z-index:70;transform:translate(-50%,20px);opacity:0;visibility:hidden;background:var(--tinta);color:#fff;border-radius:3px;padding:12px 12px 12px 18px;display:flex;gap:16px;align-items:center;box-shadow:0 14px 40px rgba(0,0,0,.25);transition:all .25s;max-width:calc(100vw - 32px);font-size:15.5px;border-left:5px solid var(--amarillo)}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast span{flex:1}
+.toast button{background:#fff;color:var(--tinta);border:0;border-radius:3px;height:36px;padding:0 12px;font-weight:700;cursor:pointer;white-space:nowrap}
+@media (max-width:760px){.toast{bottom:86px;width:calc(100vw - 32px)}}
+</style>
+</head>
+<body>
+
+<div class="util"><div class="wrap"><span class="hide-s">Lunes a sábado, 8:00 a. m. a 5:00 p. m.</span><span class="show-s">Lun. a sáb., 8 a 5</span><span class="hide-s">Envíos a todo Honduras en 24–48 h</span><span class="hide-s">Garantía de 6 meses</span><a data-wa href="#" target="_blank" rel="noopener">WhatsApp 9775-7535</a></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Hondu Truck, inicio"><img src="logo.png" alt="" width="62" height="37"><span>HONDU TRUCK<em>Repuestos y accesorios para camión</em></span></a>
+    <form class="hsearch" role="search" data-search>
+      <label><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Buscar pieza</span>
+      <input type="search" placeholder="Busca por nombre o número de parte" autocomplete="off" enterkeyhint="search"></label>
+      <button type="submit">Buscar</button>
+    </form>
+    <button class="cartbtn" type="button" data-open-cart aria-label="Abrir pedido"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg><span class="lbl">Pedido</span><span class="cart-n" data-cart-n hidden>0</span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <h1 id="h1" class="wide">Repuestos para camión con número de parte</h1>
+      <p>Tapas de tuerca, cromados, manos libres, loderas, luces LED, antenas y porta placas. Consulta existencia y precio, y haz tu pedido por WhatsApp.</p>
+      <div class="ctas"><a class="btn btn-ink" href="#catalogo">Ver catálogo</a><a class="btn btn-line" data-wa href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+      <dl class="ficha">
+        <dt>Envíos</dt><dd>A todo Honduras en 24–48 h</dd>
+        <dt>Garantía</dt><dd>6 meses por defecto de fábrica</dd>
+        <dt>Cotización</dt><dd>El mismo día por WhatsApp</dd>
+      </dl>
+    </div>
+    <div class="mosaic">
+      <figure class="m1"><img src="img/fotos/calle.jpg" alt="Cabezal blanco con trailer refrigerado estacionado junto a palmeras" width="1600" height="1131"></figure>
+      <figure class="m2"><img src="img/fotos/herramientas.jpg" alt="Caja de llaves y herramientas de taller" loading="lazy"></figure>
+      <figure class="m3-wrap" style="margin:0"><button class="m3" type="button" data-open="10"><span class="tag">Destacado</span><img src="img/productos/cobra-cromada-metalica-13-15-18.jpg" alt=""><span class="cap"><b>Cobra cromada metálica 13/15/18</b>No. de parte 70176, L 1,575</span></button></figure>
+    </div>
+  </div>
+</section>
+
+<section class="mostrador" id="catalogo" aria-labelledby="cat-t">
+  <div class="wrap">
+    <aside class="side" aria-label="Categorías">
+      <h2>Categorías</h2>
+      <div class="cats"><button class="cat" type="button" data-cat="" data-all aria-pressed="true"><span>Todo el catálogo</span><small data-total-count>52</small></button><div data-cats style="display:contents"></div></div>
+      <div class="help"><strong>¿No encuentras la pieza?</strong><p>Envíanos una foto o el número de parte y te cotizamos el mismo día.</p><a class="btn btn-wa" data-wa data-wa-msg="Hola Hondu Truck, les mando la foto / número de parte de la pieza que necesito: " href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
+    </aside>
+    <div>
+      <div class="main-head">
+        <div><h2 class="wide" id="cat-t" data-heading data-default="Todo el catálogo">Todo el catálogo</h2><div class="meta"><span data-count></span><button class="linkbtn" type="button" data-clear hidden>Quitar búsqueda</button></div></div>
+        <label class="sort">Ordenar<select data-sort><option value="rel">Destacados</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
+      </div>
+      <div class="chips" data-chips role="toolbar" aria-label="Filtrar por categoría"></div>
+      <div class="thead" aria-hidden="true"><span></span><span>Pieza</span><span>No. de parte</span><span>Existencia</span><span>Precio</span><span></span></div>
+      <div class="list" data-grid aria-live="polite"></div>
+      <div class="empty" data-empty hidden><h3>Esa pieza no está en el catálogo</h3><p>Envíanos el número de parte y te decimos si la conseguimos.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a></div>
+      <div class="more"><button class="btn btn-line" type="button" data-more hidden>Mostrar más</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="pasos" aria-labelledby="pas-t">
+  <div class="wrap">
+    <div><h2 class="wide" id="pas-t">Así haces tu pedido</h2><p>Sin registrarte y sin pagar en línea. Todo se confirma por WhatsApp con una persona del equipo.</p><a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+    <ol>
+      <li><strong>Arma la lista</strong><span>Agrega piezas al pedido o mándanos los números de parte.</span></li>
+      <li><strong>Confirma por WhatsApp</strong><span>Te confirmamos existencia, precio final y forma de pago.</span></li>
+      <li><strong>Recibe en 24–48 h</strong><span>Enviamos a cualquier ciudad del país.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="envio" aria-labelledby="env-t">
+  <div class="ph" role="img" aria-label="Camión de carga en carretera"></div>
+  <div class="tx">
+    <h2 class="wide" id="env-t">Enviamos a todo el país</h2>
+    <p>Llega en 24 a 48 horas, con salidas diarias a las principales ciudades. El costo de envío se confirma junto con tu pedido.</p>
+    <table class="tabla">
+      <thead><tr><th>Destino</th><th>Salidas</th></tr></thead>
+      <tbody><tr><td>San Pedro Sula</td><td>Diarias</td></tr><tr><td>Choloma</td><td>Diarias</td></tr><tr><td>Puerto Cortés</td><td>Diarias</td></tr><tr><td>Tegucigalpa</td><td>Diarias</td></tr><tr><td>Resto del país</td><td>Consúltanos</td></tr></tbody>
+    </table>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><img class="logo" src="logo.png" alt="Hondu Truck" loading="lazy"><p style="margin:0;max-width:30ch">Repuestos y accesorios para camiones de carga en Honduras.</p></div>
+      <div><h4>Contacto</h4><ul><li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp 9775-7535</a></li><li>Lunes a sábado</li><li>8:00 a. m. a 5:00 p. m.</li></ul></div>
+      <div><h4>Categorías</h4><ul data-foot-cats></ul></div>
+      <div><h4>Lo más buscado</h4><ul><li><button class="f" type="button" data-q="Tapa tuerca 33 mm">Tapa tuerca 33 mm</button></li><li><button class="f" type="button" data-q="Lodera 24x30">Lodera 24x30</button></li><li><button class="f" type="button" data-q="Vía doble cara">Vía doble cara LED</button></li><li><button class="f" type="button" data-q="Extensión palanca">Extensión de palanca</button></li><li><button class="f" type="button" data-q="Antena látigo">Antena látigo</button></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span data-year>2026</span> Hondu Truck. Precios en lempiras, ISV incluido.</span><span>Garantía de 6 meses por defecto de fábrica.</span></div>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg></a>
+
+<div class="scrim" data-scrim></div>
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-name" data-modal>
+  <button class="x" type="button" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="in">
+    <div class="big"><img data-m-img alt=""></div>
+    <div class="info">
+      <div class="kicker" data-m-cat></div>
+      <h2 id="m-name" data-m-name></h2>
+      <div class="p"><span data-m-price></span><small>ISV incluido</small></div>
+      <dl class="specs" data-m-specs></dl>
+      <div class="buy">
+        <div class="qty"><button type="button" data-m-dec aria-label="Quitar uno">−</button><output data-m-qty>1</output><button type="button" data-m-inc aria-label="Agregar uno">+</button></div>
+        <button class="btn btn-ink" type="button" data-m-add>Agregar al pedido</button>
+        <a class="btn btn-wa" data-m-wa href="#" target="_blank" rel="noopener" style="flex-basis:100%">Preguntar por esta pieza</a>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="c-t" data-drawer>
+  <div class="dh"><h2 id="c-t">Tu pedido</h2><button class="x" type="button" data-close aria-label="Cerrar pedido"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="lines" data-lines></div>
+  <div class="dfoot" data-cart-foot>
+    <div class="tot"><span>Subtotal</span><span data-sub></span></div>
+    <div class="tot"><span>Envío</span><span>Se confirma por WhatsApp</span></div>
+    <div class="tot big"><span>Total</span><span data-total></span></div>
+    <a class="btn btn-wa" data-order href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+    <p>Te respondemos para confirmar existencia, forma de pago y envío.</p>
+  </div>
+</aside>
+<div class="toast" role="status" data-toast><span data-toast-t></span><button type="button" data-open-cart>Ver pedido</button></div>
+
+<script>
+window.HT = {
+  page: 15, offset: 96,
+  afterGrid: function(S){var b=document.querySelector("[data-all]");if(b)b.setAttribute("aria-pressed",String(!S.cat&&!S.q))},
+  card: function(p,h){
+    var low=p.stock<=2;
+    return '<article class="item">'+
+      '<button class="th" type="button" data-open="'+p.id+'" aria-label="Ver '+h.esc(p.name)+'"><img src="'+p.img+'" alt="" loading="lazy" width="550" height="550"></button>'+
+      '<div class="nm"><h3 data-open="'+p.id+'">'+h.esc(p.name)+'</h3><div class="c">'+p.cat+'</div></div>'+
+      '<div class="sku">'+h.esc(p.sku)+'</div>'+
+      '<div class="st'+(low?' low':'')+'">'+(p.stock===1?'Última unidad':low?'Quedan '+p.stock:'En existencia')+'</div>'+
+      '<div class="pa"><span class="price">'+h.money(p.price)+'</span>'+
+      '<button class="add" type="button" data-add="'+p.id+'" aria-label="Agregar '+h.esc(p.name)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Agregar</span></button></div>'+
+    '</article>';
+  },
+  cat: function(c,n){return '<button class="cat" type="button" data-cat="'+c.k+'" aria-pressed="false"><span>'+c.n+'</span><small>'+n+'</small></button>'},
+  chip: function(c,active){return '<button class="chip" type="button" data-cat="'+(c?c.k:"")+'" aria-pressed="'+active+'">'+(c?c.n:"Todo")+'</button>'}
+};
+</script>
+<script src="core.js"></script>
+</body>
+</html>
