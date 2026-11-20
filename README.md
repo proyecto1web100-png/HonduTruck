@@ -2,6 +2,8 @@
 
 Propuestas de sitio web para Hondu Truck (accesorios y repuestos para camión, Honduras).
 
+`index.html` muestra las cinco propuestas en una sola página con un selector arriba. Cada propuesta se puede enlazar directo con `#propuesta-1` a `#propuesta-5`.
+
 - `1/` Versión clara
 - `2/` Noche y cromo
 - `3/` Institucional

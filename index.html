@@ -4,32 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hondu Truck · Propuestas de sitio web</title>
+<meta name="description" content="Cinco propuestas de sitio web para Hondu Truck. Use el selector para cambiar entre ellas.">
+<meta name="theme-color" content="#1D2125">
 <link rel="icon" href="1/logo.png">
 <style>
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F3F4F6;color:#1D2125;line-height:1.5}
-main{max-width:880px;margin:0 auto;padding:48px 20px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
-header img{width:72px}
-h1{font-size:28px;margin:0}
-p{color:#5B636B;margin:4px 0 0}
-ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-a{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;border:1px solid #D6DADF;border-radius:10px;padding:20px 22px;text-decoration:none;color:inherit}
-a:hover{border-color:#1D2125}
-a strong{display:block;font-size:19px}
-a span{color:#5B636B;font-size:15px}
-a b{color:#C8161D;white-space:nowrap}
+:root{--bar:52px;--fondo:#1D2125;--linea:rgba(255,255,255,.14);--suave:#AEB6BE;--rojo:#C8161D}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fondo);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff}
+.bar{height:var(--bar);display:flex;align-items:center;gap:14px;padding:0 12px 0 14px;border-bottom:1px solid var(--linea)}
+.marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;white-space:nowrap}
+.marca img{width:40px}
+.marca span{color:var(--suave);font-weight:500}
+.sel{display:flex;gap:4px;margin:0 auto;padding:4px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--linea);overflow-x:auto;scrollbar-width:none;max-width:100%}
+.sel::-webkit-scrollbar{display:none}
+.sel button{flex-shrink:0;height:34px;padding:0 14px;border:0;border-radius:7px;background:transparent;color:var(--suave);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.sel button b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:5px;background:rgba(255,255,255,.1);font-size:12.5px;margin-right:8px;color:#fff}
+.sel button:hover{color:#fff;background:rgba(255,255,255,.06)}
+.sel button[aria-pressed="true"]{background:#fff;color:var(--fondo)}
+.sel button[aria-pressed="true"] b{background:var(--rojo)}
+.sel button:focus-visible,.abrir:focus-visible{outline:2px solid #F2A900;outline-offset:2px}
+.abrir{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:7px;border:1px solid var(--linea);color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.abrir:hover{border-color:#fff}
+iframe{display:block;width:100%;height:calc(100% - var(--bar));border:0;background:#fff}
+@media (max-width:1100px){.marca span{display:none}}
+@media (max-width:760px){
+  .bar{gap:8px;padding:0 8px}
+  .marca{display:none}
+  .sel{margin:0;flex:1}
+  .sel button{padding:0 10px}
+  .sel button .n{display:none}
+  .sel button b{margin-right:0}
+  .sel button[aria-pressed="true"] .n{display:inline;margin-left:8px}
+  .abrir span{display:none}
+}
 </style>
 </head>
 <body>
-<main>
-  <header><img src="1/logo.png" alt=""><div><h1>Hondu Truck</h1><p>Cinco propuestas de sitio web para revisar.</p></div></header>
-  <ul>
-    <li><a href="1/"><div><strong>Versión 1 · Clara</strong><span>Fondo blanco, líneas rojas del logo y catálogo en cuadrícula.</span></div><b>Ver</b></a></li>
-    <li><a href="2/"><div><strong>Versión 2 · Noche y cromo</strong><span>Oscura, con las piezas iluminadas como en vitrina.</span></div><b>Ver</b></a></li>
-    <li><a href="3/"><div><strong>Versión 3 · Institucional</strong><span>Sobria y formal: líneas de producto, catálogo y condiciones de venta.</span></div><b>Ver</b></a></li>
-    <li><a href="4/"><div><strong>Versión 4 · Catálogo técnico</strong><span>Catálogo por capítulos con índice: qué es cada pieza, qué revisar y tabla de precios.</span></div><b>Ver</b></a></li>
-    <li><a href="5/"><div><strong>Versión 5 · Cabina (vidrio)</strong><span>Paneles de vidrio sobre foto de carretera y pedido en vivo junto al catálogo.</span></div><b>Ver</b></a></li>
-  </ul>
-</main>
+<header class="bar">
+  <div class="marca"><img src="1/logo-blanco.png" alt="">Hondu Truck <span>Propuestas de sitio web</span></div>
+  <nav class="sel" aria-label="Elegir propuesta" data-sel>
+    <button type="button" data-p="1"><b>1</b><span class="n">Clara</span></button>
+    <button type="button" data-p="2"><b>2</b><span class="n">Noche y cromo</span></button>
+    <button type="button" data-p="3"><b>3</b><span class="n">Institucional</span></button>
+    <button type="button" data-p="4"><b>4</b><span class="n">Catálogo técnico</span></button>
+    <button type="button" data-p="5"><b>5</b><span class="n">Cabina (vidrio)</span></button>
+  </nav>
+  <a class="abrir" data-abrir href="1/" target="_blank" rel="noopener" title="Abrir esta propuesta en una pestaña nueva"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span>Abrir sola</span></a>
+</header>
+<iframe data-frame title="Propuesta de sitio web" src="1/"></iframe>
+<script>
+(function(){
+  var frame=document.querySelector("[data-frame]"), abrir=document.querySelector("[data-abrir]"), btns=document.querySelectorAll("[data-p]");
+  function current(){var m=/^#propuesta-([1-5])$/.exec(location.hash);return m?m[1]:"1"}
+  function show(n){
+    btns.forEach(function(b){var on=b.getAttribute("data-p")===n;b.setAttribute("aria-pressed",String(on));if(on)b.scrollIntoView({block:"nearest",inline:"nearest"})});
+    var url=n+"/";
+    if(frame.getAttribute("src")!==url) frame.setAttribute("src",url);
+    abrir.href=url;
+    frame.title="Propuesta "+n+" de sitio web";
+  }
+  document.querySelector("[data-sel]").addEventListener("click",function(e){
+    var b=e.target.closest("[data-p]"); if(!b) return;
+    var n=b.getAttribute("data-p");
+    if(location.hash!=="#propuesta-"+n) history.replaceState(null,"","#propuesta-"+n);
+    show(n);
+  });
+  window.addEventListener("hashchange",function(){show(current())});
+  show(current());
+})();
+</script>
 </body>
 </html>
